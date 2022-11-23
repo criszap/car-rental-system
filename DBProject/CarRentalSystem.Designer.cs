@@ -43,6 +43,29 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.rentEnd = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.Make = new System.Windows.Forms.Label();
@@ -56,8 +79,12 @@
             this.Year = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
+            this.customers.SuspendLayout();
+            this.rentedCars.SuspendLayout();
             this.rentalInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,6 +133,17 @@
             // 
             // customers
             // 
+            this.customers.Controls.Add(this.dataGridView4);
+            this.customers.Controls.Add(this.textBox16);
+            this.customers.Controls.Add(this.label7);
+            this.customers.Controls.Add(this.label8);
+            this.customers.Controls.Add(this.textBox17);
+            this.customers.Controls.Add(this.textBox18);
+            this.customers.Controls.Add(this.label9);
+            this.customers.Controls.Add(this.label10);
+            this.customers.Controls.Add(this.textBox19);
+            this.customers.Controls.Add(this.textBox20);
+            this.customers.Controls.Add(this.label11);
             this.customers.Location = new System.Drawing.Point(4, 24);
             this.customers.Name = "customers";
             this.customers.Padding = new System.Windows.Forms.Padding(3);
@@ -116,6 +154,17 @@
             // 
             // rentedCars
             // 
+            this.rentedCars.Controls.Add(this.dataGridView3);
+            this.rentedCars.Controls.Add(this.textBox11);
+            this.rentedCars.Controls.Add(this.label1);
+            this.rentedCars.Controls.Add(this.label3);
+            this.rentedCars.Controls.Add(this.textBox12);
+            this.rentedCars.Controls.Add(this.textBox13);
+            this.rentedCars.Controls.Add(this.label4);
+            this.rentedCars.Controls.Add(this.label5);
+            this.rentedCars.Controls.Add(this.textBox14);
+            this.rentedCars.Controls.Add(this.textBox15);
+            this.rentedCars.Controls.Add(this.label6);
             this.rentedCars.Location = new System.Drawing.Point(4, 24);
             this.rentedCars.Name = "rentedCars";
             this.rentedCars.Size = new System.Drawing.Size(953, 510);
@@ -126,6 +175,7 @@
             // rentalInfo
             // 
             this.rentalInfo.Controls.Add(this.dataGridView2);
+            this.rentalInfo.Controls.Add(this.textBox6);
             this.rentalInfo.Controls.Add(this.orderID);
             this.rentalInfo.Controls.Add(this.textBox7);
             this.rentalInfo.Controls.Add(this.textBox8);
@@ -238,6 +288,235 @@
             this.rentEnd.TabIndex = 17;
             this.rentEnd.Text = "Rent End Date";
             this.rentEnd.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.AcceptsTab = true;
+            this.textBox6.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Location = new System.Drawing.Point(703, 73);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(119, 23);
+            this.textBox6.TabIndex = 22;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(6, 124);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(941, 336);
+            this.dataGridView3.TabIndex = 23;
+            // 
+            // textBox11
+            // 
+            this.textBox11.AcceptsTab = true;
+            this.textBox11.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox11.Location = new System.Drawing.Point(703, 73);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(119, 23);
+            this.textBox11.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(93, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(703, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Daily Price";
+            // 
+            // textBox12
+            // 
+            this.textBox12.AcceptsTab = true;
+            this.textBox12.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox12.Location = new System.Drawing.Point(93, 73);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(119, 23);
+            this.textBox12.TabIndex = 14;
+            // 
+            // textBox13
+            // 
+            this.textBox13.AcceptsTab = true;
+            this.textBox13.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox13.Location = new System.Drawing.Point(556, 73);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(119, 23);
+            this.textBox13.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(245, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(556, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "label5";
+            // 
+            // textBox14
+            // 
+            this.textBox14.AcceptsTab = true;
+            this.textBox14.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox14.Location = new System.Drawing.Point(245, 73);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(119, 23);
+            this.textBox14.TabIndex = 16;
+            // 
+            // textBox15
+            // 
+            this.textBox15.AcceptsTab = true;
+            this.textBox15.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox15.Location = new System.Drawing.Point(400, 73);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(119, 23);
+            this.textBox15.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(400, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "label6";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(6, 124);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowTemplate.Height = 25;
+            this.dataGridView4.Size = new System.Drawing.Size(941, 336);
+            this.dataGridView4.TabIndex = 23;
+            // 
+            // textBox16
+            // 
+            this.textBox16.AcceptsTab = true;
+            this.textBox16.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox16.Location = new System.Drawing.Point(703, 73);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(119, 23);
+            this.textBox16.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(93, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 20);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "label7";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(703, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 20);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Daily Price";
+            // 
+            // textBox17
+            // 
+            this.textBox17.AcceptsTab = true;
+            this.textBox17.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox17.Location = new System.Drawing.Point(93, 73);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(119, 23);
+            this.textBox17.TabIndex = 14;
+            // 
+            // textBox18
+            // 
+            this.textBox18.AcceptsTab = true;
+            this.textBox18.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox18.Location = new System.Drawing.Point(556, 73);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(119, 23);
+            this.textBox18.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(245, 50);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 20);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "label9";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(556, 50);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 20);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "label10";
+            // 
+            // textBox19
+            // 
+            this.textBox19.AcceptsTab = true;
+            this.textBox19.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox19.Location = new System.Drawing.Point(245, 73);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(119, 23);
+            this.textBox19.TabIndex = 16;
+            // 
+            // textBox20
+            // 
+            this.textBox20.AcceptsTab = true;
+            this.textBox20.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox20.Location = new System.Drawing.Point(400, 73);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(119, 23);
+            this.textBox20.TabIndex = 18;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(400, 50);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 20);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "label11";
             // 
             // dataGridView1
             // 
@@ -361,9 +640,15 @@
             this.tabControl1.ResumeLayout(false);
             this.carList.ResumeLayout(false);
             this.carList.PerformLayout();
+            this.customers.ResumeLayout(false);
+            this.customers.PerformLayout();
+            this.rentedCars.ResumeLayout(false);
+            this.rentedCars.PerformLayout();
             this.rentalInfo.ResumeLayout(false);
             this.rentalInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -397,5 +682,28 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private Label Year;
+        private DataGridView dataGridView4;
+        private TextBox textBox16;
+        private Label label7;
+        private Label label8;
+        private TextBox textBox17;
+        private TextBox textBox18;
+        private Label label9;
+        private Label label10;
+        private TextBox textBox19;
+        private TextBox textBox20;
+        private Label label11;
+        private DataGridView dataGridView3;
+        private TextBox textBox11;
+        private Label label1;
+        private Label label3;
+        private TextBox textBox12;
+        private TextBox textBox13;
+        private Label label4;
+        private Label label5;
+        private TextBox textBox14;
+        private TextBox textBox15;
+        private Label label6;
+        private TextBox textBox6;
     }
 }

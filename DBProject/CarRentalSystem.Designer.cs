@@ -41,10 +41,10 @@
             this.DailyPrice = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.carList = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.customers = new System.Windows.Forms.TabPage();
             this.rentedCars = new System.Windows.Forms.TabPage();
             this.rentalInfo = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,7 +64,7 @@
             // 
             this.Make.AutoSize = true;
             this.Make.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Make.Location = new System.Drawing.Point(92, 92);
+            this.Make.Location = new System.Drawing.Point(93, 39);
             this.Make.Name = "Make";
             this.Make.Size = new System.Drawing.Size(47, 20);
             this.Make.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.textBox1.AcceptsTab = true;
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(92, 115);
+            this.textBox1.Location = new System.Drawing.Point(93, 62);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(119, 23);
             this.textBox1.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.Model.AutoSize = true;
             this.Model.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Model.Location = new System.Drawing.Point(244, 92);
+            this.Model.Location = new System.Drawing.Point(245, 39);
             this.Model.Name = "Model";
             this.Model.Size = new System.Drawing.Size(53, 20);
             this.Model.TabIndex = 4;
@@ -98,7 +98,7 @@
             this.textBox2.AcceptsTab = true;
             this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(244, 115);
+            this.textBox2.Location = new System.Drawing.Point(245, 62);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(119, 23);
             this.textBox2.TabIndex = 5;
@@ -108,7 +108,7 @@
             // 
             this.Year.AutoSize = true;
             this.Year.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Year.Location = new System.Drawing.Point(399, 92);
+            this.Year.Location = new System.Drawing.Point(400, 39);
             this.Year.Name = "Year";
             this.Year.Size = new System.Drawing.Size(39, 20);
             this.Year.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.textBox3.AcceptsTab = true;
             this.textBox3.BackColor = System.Drawing.SystemColors.Window;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(399, 115);
+            this.textBox3.Location = new System.Drawing.Point(400, 62);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(119, 23);
             this.textBox3.TabIndex = 7;
@@ -131,7 +131,7 @@
             this.textBox4.AcceptsTab = true;
             this.textBox4.BackColor = System.Drawing.SystemColors.Window;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(555, 115);
+            this.textBox4.Location = new System.Drawing.Point(556, 62);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(119, 23);
             this.textBox4.TabIndex = 9;
@@ -141,7 +141,7 @@
             // 
             this.Color.AutoSize = true;
             this.Color.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Color.Location = new System.Drawing.Point(555, 92);
+            this.Color.Location = new System.Drawing.Point(556, 39);
             this.Color.Name = "Color";
             this.Color.Size = new System.Drawing.Size(46, 20);
             this.Color.TabIndex = 8;
@@ -153,7 +153,7 @@
             this.textBox5.AcceptsTab = true;
             this.textBox5.BackColor = System.Drawing.SystemColors.Window;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(702, 115);
+            this.textBox5.Location = new System.Drawing.Point(703, 62);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(119, 23);
             this.textBox5.TabIndex = 11;
@@ -163,7 +163,7 @@
             // 
             this.DailyPrice.AutoSize = true;
             this.DailyPrice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DailyPrice.Location = new System.Drawing.Point(702, 92);
+            this.DailyPrice.Location = new System.Drawing.Point(703, 39);
             this.DailyPrice.Name = "DailyPrice";
             this.DailyPrice.Size = new System.Drawing.Size(82, 20);
             this.DailyPrice.TabIndex = 10;
@@ -203,6 +203,16 @@
             this.carList.Text = "Car List";
             this.carList.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 113);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(941, 336);
+            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // customers
             // 
             this.customers.Location = new System.Drawing.Point(4, 24);
@@ -230,16 +240,6 @@
             this.rentalInfo.TabIndex = 3;
             this.rentalInfo.Text = "Rental Info";
             this.rentalInfo.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 168);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(941, 336);
-            this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CarRentalSystem
             // 

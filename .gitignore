@@ -351,6 +351,6 @@ MigrationBackup/
 
 # visual studio build stuff to ignore
 
-*/DBProject/.vs
-*/DBProject/bin
-*/DBProject/obj
+DBProject/.vs/
+DBProject/bin/
+DBProject/obj/

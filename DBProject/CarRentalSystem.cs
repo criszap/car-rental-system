@@ -121,5 +121,20 @@ namespace DBProject
         {
 
         }
+
+        private void carList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Make_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

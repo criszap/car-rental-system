@@ -31,30 +31,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.carList = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.make = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daily_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dailyPriceField = new System.Windows.Forms.TextBox();
+            this.makeLabel = new System.Windows.Forms.Label();
+            this.dailyPriceLabel = new System.Windows.Forms.Label();
+            this.makeField = new System.Windows.Forms.TextBox();
+            this.colorField = new System.Windows.Forms.TextBox();
+            this.modelLabel = new System.Windows.Forms.Label();
+            this.colorLabel = new System.Windows.Forms.Label();
+            this.modelField = new System.Windows.Forms.TextBox();
+            this.yearField = new System.Windows.Forms.TextBox();
+            this.yearLabel = new System.Windows.Forms.Label();
             this.customers = new System.Windows.Forms.TabPage();
-            this.rentedCars = new System.Windows.Forms.TabPage();
-            this.rentalInfo = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.orderID = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.rentStart = new System.Windows.Forms.Label();
-            this.totalPrice = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.rentEnd = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,26 +59,41 @@
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.Make = new System.Windows.Forms.Label();
-            this.DailyPrice = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.Model = new System.Windows.Forms.Label();
-            this.Color = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.Year = new System.Windows.Forms.Label();
+            this.rentedCars = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.rentalInfo = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.rentalOrderIdLabel = new System.Windows.Forms.Label();
+            this.rentalOrderIdField = new System.Windows.Forms.TextBox();
+            this.totalPriceField = new System.Windows.Forms.TextBox();
+            this.rentStartLabel = new System.Windows.Forms.Label();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
+            this.rentStartField = new System.Windows.Forms.TextBox();
+            this.rentEndField = new System.Windows.Forms.TextBox();
+            this.rentEndLabel = new System.Windows.Forms.Label();
+            this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rent_start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rent_end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.customers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.rentedCars.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.rentalInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -113,16 +121,16 @@
             // carList
             // 
             this.carList.Controls.Add(this.dataGridView1);
-            this.carList.Controls.Add(this.textBox5);
-            this.carList.Controls.Add(this.Make);
-            this.carList.Controls.Add(this.DailyPrice);
-            this.carList.Controls.Add(this.textBox1);
-            this.carList.Controls.Add(this.textBox4);
-            this.carList.Controls.Add(this.Model);
-            this.carList.Controls.Add(this.Color);
-            this.carList.Controls.Add(this.textBox2);
-            this.carList.Controls.Add(this.textBox3);
-            this.carList.Controls.Add(this.Year);
+            this.carList.Controls.Add(this.dailyPriceField);
+            this.carList.Controls.Add(this.makeLabel);
+            this.carList.Controls.Add(this.dailyPriceLabel);
+            this.carList.Controls.Add(this.makeField);
+            this.carList.Controls.Add(this.colorField);
+            this.carList.Controls.Add(this.modelLabel);
+            this.carList.Controls.Add(this.colorLabel);
+            this.carList.Controls.Add(this.modelField);
+            this.carList.Controls.Add(this.yearField);
+            this.carList.Controls.Add(this.yearLabel);
             this.carList.Location = new System.Drawing.Point(4, 24);
             this.carList.Name = "carList";
             this.carList.Padding = new System.Windows.Forms.Padding(3);
@@ -130,6 +138,154 @@
             this.carList.TabIndex = 0;
             this.carList.Text = "Car List";
             this.carList.UseVisualStyleBackColor = true;
+            this.carList.Click += new System.EventHandler(this.carList_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.make,
+            this.model,
+            this.year,
+            this.color,
+            this.daily_price});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 124);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(941, 336);
+            this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // make
+            // 
+            this.make.HeaderText = "Make";
+            this.make.Name = "make";
+            this.make.Width = 180;
+            // 
+            // model
+            // 
+            this.model.HeaderText = "Model";
+            this.model.Name = "model";
+            this.model.Width = 180;
+            // 
+            // year
+            // 
+            this.year.HeaderText = "Year";
+            this.year.Name = "year";
+            this.year.Width = 180;
+            // 
+            // color
+            // 
+            this.color.HeaderText = "Color";
+            this.color.Name = "color";
+            this.color.Width = 180;
+            // 
+            // daily_price
+            // 
+            this.daily_price.HeaderText = "Daily Price";
+            this.daily_price.Name = "daily_price";
+            this.daily_price.Width = 180;
+            // 
+            // dailyPriceField
+            // 
+            this.dailyPriceField.AcceptsTab = true;
+            this.dailyPriceField.BackColor = System.Drawing.SystemColors.Window;
+            this.dailyPriceField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dailyPriceField.Location = new System.Drawing.Point(703, 73);
+            this.dailyPriceField.Name = "dailyPriceField";
+            this.dailyPriceField.Size = new System.Drawing.Size(119, 23);
+            this.dailyPriceField.TabIndex = 22;
+            // 
+            // makeLabel
+            // 
+            this.makeLabel.AutoSize = true;
+            this.makeLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.makeLabel.Location = new System.Drawing.Point(93, 50);
+            this.makeLabel.Name = "makeLabel";
+            this.makeLabel.Size = new System.Drawing.Size(47, 20);
+            this.makeLabel.TabIndex = 13;
+            this.makeLabel.Text = "Make";
+            this.makeLabel.Click += new System.EventHandler(this.Make_Click_1);
+            // 
+            // dailyPriceLabel
+            // 
+            this.dailyPriceLabel.AutoSize = true;
+            this.dailyPriceLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dailyPriceLabel.Location = new System.Drawing.Point(703, 50);
+            this.dailyPriceLabel.Name = "dailyPriceLabel";
+            this.dailyPriceLabel.Size = new System.Drawing.Size(82, 20);
+            this.dailyPriceLabel.TabIndex = 21;
+            this.dailyPriceLabel.Text = "Daily Price";
+            // 
+            // makeField
+            // 
+            this.makeField.AcceptsTab = true;
+            this.makeField.BackColor = System.Drawing.SystemColors.Window;
+            this.makeField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.makeField.Location = new System.Drawing.Point(93, 73);
+            this.makeField.Name = "makeField";
+            this.makeField.Size = new System.Drawing.Size(119, 23);
+            this.makeField.TabIndex = 14;
+            // 
+            // colorField
+            // 
+            this.colorField.AcceptsTab = true;
+            this.colorField.BackColor = System.Drawing.SystemColors.Window;
+            this.colorField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorField.Location = new System.Drawing.Point(556, 73);
+            this.colorField.Name = "colorField";
+            this.colorField.Size = new System.Drawing.Size(119, 23);
+            this.colorField.TabIndex = 20;
+            // 
+            // modelLabel
+            // 
+            this.modelLabel.AutoSize = true;
+            this.modelLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.modelLabel.Location = new System.Drawing.Point(245, 50);
+            this.modelLabel.Name = "modelLabel";
+            this.modelLabel.Size = new System.Drawing.Size(53, 20);
+            this.modelLabel.TabIndex = 15;
+            this.modelLabel.Text = "Model";
+            // 
+            // colorLabel
+            // 
+            this.colorLabel.AutoSize = true;
+            this.colorLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.colorLabel.Location = new System.Drawing.Point(556, 50);
+            this.colorLabel.Name = "colorLabel";
+            this.colorLabel.Size = new System.Drawing.Size(46, 20);
+            this.colorLabel.TabIndex = 19;
+            this.colorLabel.Text = "Color";
+            // 
+            // modelField
+            // 
+            this.modelField.AcceptsTab = true;
+            this.modelField.BackColor = System.Drawing.SystemColors.Window;
+            this.modelField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.modelField.Location = new System.Drawing.Point(245, 73);
+            this.modelField.Name = "modelField";
+            this.modelField.Size = new System.Drawing.Size(119, 23);
+            this.modelField.TabIndex = 16;
+            // 
+            // yearField
+            // 
+            this.yearField.AcceptsTab = true;
+            this.yearField.BackColor = System.Drawing.SystemColors.Window;
+            this.yearField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.yearField.Location = new System.Drawing.Point(400, 73);
+            this.yearField.Name = "yearField";
+            this.yearField.Size = new System.Drawing.Size(119, 23);
+            this.yearField.TabIndex = 18;
+            // 
+            // yearLabel
+            // 
+            this.yearLabel.AutoSize = true;
+            this.yearLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.yearLabel.Location = new System.Drawing.Point(400, 50);
+            this.yearLabel.Name = "yearLabel";
+            this.yearLabel.Size = new System.Drawing.Size(39, 20);
+            this.yearLabel.TabIndex = 17;
+            this.yearLabel.Text = "Year";
             // 
             // customers
             // 
@@ -151,263 +307,6 @@
             this.customers.TabIndex = 1;
             this.customers.Text = "Customers";
             this.customers.UseVisualStyleBackColor = true;
-            // 
-            // rentedCars
-            // 
-            this.rentedCars.Controls.Add(this.dataGridView3);
-            this.rentedCars.Controls.Add(this.textBox11);
-            this.rentedCars.Controls.Add(this.label1);
-            this.rentedCars.Controls.Add(this.label3);
-            this.rentedCars.Controls.Add(this.textBox12);
-            this.rentedCars.Controls.Add(this.textBox13);
-            this.rentedCars.Controls.Add(this.label4);
-            this.rentedCars.Controls.Add(this.label5);
-            this.rentedCars.Controls.Add(this.textBox14);
-            this.rentedCars.Controls.Add(this.textBox15);
-            this.rentedCars.Controls.Add(this.label6);
-            this.rentedCars.Location = new System.Drawing.Point(4, 24);
-            this.rentedCars.Name = "rentedCars";
-            this.rentedCars.Size = new System.Drawing.Size(953, 510);
-            this.rentedCars.TabIndex = 2;
-            this.rentedCars.Text = "Rented Cars";
-            this.rentedCars.UseVisualStyleBackColor = true;
-            // 
-            // rentalInfo
-            // 
-            this.rentalInfo.Controls.Add(this.dataGridView2);
-            this.rentalInfo.Controls.Add(this.textBox6);
-            this.rentalInfo.Controls.Add(this.orderID);
-            this.rentalInfo.Controls.Add(this.textBox7);
-            this.rentalInfo.Controls.Add(this.textBox8);
-            this.rentalInfo.Controls.Add(this.rentStart);
-            this.rentalInfo.Controls.Add(this.totalPrice);
-            this.rentalInfo.Controls.Add(this.textBox9);
-            this.rentalInfo.Controls.Add(this.textBox10);
-            this.rentalInfo.Controls.Add(this.rentEnd);
-            this.rentalInfo.Location = new System.Drawing.Point(4, 24);
-            this.rentalInfo.Name = "rentalInfo";
-            this.rentalInfo.Size = new System.Drawing.Size(953, 510);
-            this.rentalInfo.TabIndex = 3;
-            this.rentalInfo.Text = "Rental Info";
-            this.rentalInfo.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 124);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(941, 336);
-            this.dataGridView2.TabIndex = 23;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // orderID
-            // 
-            this.orderID.AutoSize = true;
-            this.orderID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.orderID.Location = new System.Drawing.Point(93, 50);
-            this.orderID.Name = "orderID";
-            this.orderID.Size = new System.Drawing.Size(69, 20);
-            this.orderID.TabIndex = 13;
-            this.orderID.Text = "Order ID";
-            this.orderID.Click += new System.EventHandler(this.label1_Click_2);
-            // 
-            // textBox7
-            // 
-            this.textBox7.AcceptsTab = true;
-            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(93, 73);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(119, 23);
-            this.textBox7.TabIndex = 14;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // textBox8
-            // 
-            this.textBox8.AcceptsTab = true;
-            this.textBox8.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Location = new System.Drawing.Point(556, 73);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(119, 23);
-            this.textBox8.TabIndex = 20;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
-            // 
-            // rentStart
-            // 
-            this.rentStart.AutoSize = true;
-            this.rentStart.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rentStart.Location = new System.Drawing.Point(245, 50);
-            this.rentStart.Name = "rentStart";
-            this.rentStart.Size = new System.Drawing.Size(117, 20);
-            this.rentStart.TabIndex = 15;
-            this.rentStart.Text = "Rent Start Date";
-            this.rentStart.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // totalPrice
-            // 
-            this.totalPrice.AutoSize = true;
-            this.totalPrice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.totalPrice.Location = new System.Drawing.Point(556, 50);
-            this.totalPrice.Name = "totalPrice";
-            this.totalPrice.Size = new System.Drawing.Size(82, 20);
-            this.totalPrice.TabIndex = 19;
-            this.totalPrice.Text = "Total Price";
-            this.totalPrice.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // textBox9
-            // 
-            this.textBox9.AcceptsTab = true;
-            this.textBox9.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(245, 73);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(119, 23);
-            this.textBox9.TabIndex = 16;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
-            // 
-            // textBox10
-            // 
-            this.textBox10.AcceptsTab = true;
-            this.textBox10.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(400, 73);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(119, 23);
-            this.textBox10.TabIndex = 18;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
-            // 
-            // rentEnd
-            // 
-            this.rentEnd.AutoSize = true;
-            this.rentEnd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rentEnd.Location = new System.Drawing.Point(400, 50);
-            this.rentEnd.Name = "rentEnd";
-            this.rentEnd.Size = new System.Drawing.Size(109, 20);
-            this.rentEnd.TabIndex = 17;
-            this.rentEnd.Text = "Rent End Date";
-            this.rentEnd.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.AcceptsTab = true;
-            this.textBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(703, 73);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(119, 23);
-            this.textBox6.TabIndex = 22;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 124);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(941, 336);
-            this.dataGridView3.TabIndex = 23;
-            // 
-            // textBox11
-            // 
-            this.textBox11.AcceptsTab = true;
-            this.textBox11.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Location = new System.Drawing.Point(703, 73);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(119, 23);
-            this.textBox11.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(93, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(703, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Daily Price";
-            // 
-            // textBox12
-            // 
-            this.textBox12.AcceptsTab = true;
-            this.textBox12.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox12.Location = new System.Drawing.Point(93, 73);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(119, 23);
-            this.textBox12.TabIndex = 14;
-            // 
-            // textBox13
-            // 
-            this.textBox13.AcceptsTab = true;
-            this.textBox13.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Location = new System.Drawing.Point(556, 73);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(119, 23);
-            this.textBox13.TabIndex = 20;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(245, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(556, 50);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "label5";
-            // 
-            // textBox14
-            // 
-            this.textBox14.AcceptsTab = true;
-            this.textBox14.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox14.Location = new System.Drawing.Point(245, 73);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(119, 23);
-            this.textBox14.TabIndex = 16;
-            // 
-            // textBox15
-            // 
-            this.textBox15.AcceptsTab = true;
-            this.textBox15.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox15.Location = new System.Drawing.Point(400, 73);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(119, 23);
-            this.textBox15.TabIndex = 18;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(400, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "label6";
             // 
             // dataGridView4
             // 
@@ -518,114 +417,279 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "label11";
             // 
-            // dataGridView1
+            // rentedCars
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(941, 336);
-            this.dataGridView1.TabIndex = 23;
+            this.rentedCars.Controls.Add(this.dataGridView3);
+            this.rentedCars.Controls.Add(this.textBox11);
+            this.rentedCars.Controls.Add(this.label1);
+            this.rentedCars.Controls.Add(this.label3);
+            this.rentedCars.Controls.Add(this.textBox12);
+            this.rentedCars.Controls.Add(this.textBox13);
+            this.rentedCars.Controls.Add(this.label4);
+            this.rentedCars.Controls.Add(this.label5);
+            this.rentedCars.Controls.Add(this.textBox14);
+            this.rentedCars.Controls.Add(this.textBox15);
+            this.rentedCars.Controls.Add(this.label6);
+            this.rentedCars.Location = new System.Drawing.Point(4, 24);
+            this.rentedCars.Name = "rentedCars";
+            this.rentedCars.Size = new System.Drawing.Size(953, 510);
+            this.rentedCars.TabIndex = 2;
+            this.rentedCars.Text = "Rented Cars";
+            this.rentedCars.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // dataGridView3
             // 
-            this.textBox5.AcceptsTab = true;
-            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(703, 73);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(119, 23);
-            this.textBox5.TabIndex = 22;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(6, 124);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(941, 336);
+            this.dataGridView3.TabIndex = 23;
             // 
-            // Make
+            // textBox11
             // 
-            this.Make.AutoSize = true;
-            this.Make.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Make.Location = new System.Drawing.Point(93, 50);
-            this.Make.Name = "Make";
-            this.Make.Size = new System.Drawing.Size(47, 20);
-            this.Make.TabIndex = 13;
-            this.Make.Text = "Make";
+            this.textBox11.AcceptsTab = true;
+            this.textBox11.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox11.Location = new System.Drawing.Point(703, 73);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(119, 23);
+            this.textBox11.TabIndex = 22;
             // 
-            // DailyPrice
+            // label1
             // 
-            this.DailyPrice.AutoSize = true;
-            this.DailyPrice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DailyPrice.Location = new System.Drawing.Point(703, 50);
-            this.DailyPrice.Name = "DailyPrice";
-            this.DailyPrice.Size = new System.Drawing.Size(82, 20);
-            this.DailyPrice.TabIndex = 21;
-            this.DailyPrice.Text = "Daily Price";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(93, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.AcceptsTab = true;
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(93, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 23);
-            this.textBox1.TabIndex = 14;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(703, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Daily Price";
             // 
-            // textBox4
+            // textBox12
             // 
-            this.textBox4.AcceptsTab = true;
-            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(556, 73);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(119, 23);
-            this.textBox4.TabIndex = 20;
+            this.textBox12.AcceptsTab = true;
+            this.textBox12.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox12.Location = new System.Drawing.Point(93, 73);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(119, 23);
+            this.textBox12.TabIndex = 14;
             // 
-            // Model
+            // textBox13
             // 
-            this.Model.AutoSize = true;
-            this.Model.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Model.Location = new System.Drawing.Point(245, 50);
-            this.Model.Name = "Model";
-            this.Model.Size = new System.Drawing.Size(53, 20);
-            this.Model.TabIndex = 15;
-            this.Model.Text = "Model";
+            this.textBox13.AcceptsTab = true;
+            this.textBox13.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox13.Location = new System.Drawing.Point(556, 73);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(119, 23);
+            this.textBox13.TabIndex = 20;
             // 
-            // Color
+            // label4
             // 
-            this.Color.AutoSize = true;
-            this.Color.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Color.Location = new System.Drawing.Point(556, 50);
-            this.Color.Name = "Color";
-            this.Color.Size = new System.Drawing.Size(46, 20);
-            this.Color.TabIndex = 19;
-            this.Color.Text = "Color";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(245, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "label4";
             // 
-            // textBox2
+            // label5
             // 
-            this.textBox2.AcceptsTab = true;
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(245, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(119, 23);
-            this.textBox2.TabIndex = 16;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(556, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "label5";
             // 
-            // textBox3
+            // textBox14
             // 
-            this.textBox3.AcceptsTab = true;
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(400, 73);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(119, 23);
-            this.textBox3.TabIndex = 18;
+            this.textBox14.AcceptsTab = true;
+            this.textBox14.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox14.Location = new System.Drawing.Point(245, 73);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(119, 23);
+            this.textBox14.TabIndex = 16;
             // 
-            // Year
+            // textBox15
             // 
-            this.Year.AutoSize = true;
-            this.Year.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Year.Location = new System.Drawing.Point(400, 50);
-            this.Year.Name = "Year";
-            this.Year.Size = new System.Drawing.Size(39, 20);
-            this.Year.TabIndex = 17;
-            this.Year.Text = "Year";
+            this.textBox15.AcceptsTab = true;
+            this.textBox15.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox15.Location = new System.Drawing.Point(400, 73);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(119, 23);
+            this.textBox15.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(400, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "label6";
+            // 
+            // rentalInfo
+            // 
+            this.rentalInfo.Controls.Add(this.dataGridView2);
+            this.rentalInfo.Controls.Add(this.rentalOrderIdLabel);
+            this.rentalInfo.Controls.Add(this.rentalOrderIdField);
+            this.rentalInfo.Controls.Add(this.totalPriceField);
+            this.rentalInfo.Controls.Add(this.rentStartLabel);
+            this.rentalInfo.Controls.Add(this.totalPriceLabel);
+            this.rentalInfo.Controls.Add(this.rentStartField);
+            this.rentalInfo.Controls.Add(this.rentEndField);
+            this.rentalInfo.Controls.Add(this.rentEndLabel);
+            this.rentalInfo.Location = new System.Drawing.Point(4, 24);
+            this.rentalInfo.Name = "rentalInfo";
+            this.rentalInfo.Size = new System.Drawing.Size(953, 510);
+            this.rentalInfo.TabIndex = 3;
+            this.rentalInfo.Text = "Rental Info";
+            this.rentalInfo.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.order_id,
+            this.rent_start_date,
+            this.rent_end_date,
+            this.total_price});
+            this.dataGridView2.Location = new System.Drawing.Point(6, 124);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(941, 336);
+            this.dataGridView2.TabIndex = 23;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // rentalOrderIdLabel
+            // 
+            this.rentalOrderIdLabel.AutoSize = true;
+            this.rentalOrderIdLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rentalOrderIdLabel.Location = new System.Drawing.Point(93, 50);
+            this.rentalOrderIdLabel.Name = "rentalOrderIdLabel";
+            this.rentalOrderIdLabel.Size = new System.Drawing.Size(69, 20);
+            this.rentalOrderIdLabel.TabIndex = 13;
+            this.rentalOrderIdLabel.Text = "Order ID";
+            this.rentalOrderIdLabel.Click += new System.EventHandler(this.label1_Click_2);
+            // 
+            // rentalOrderIdField
+            // 
+            this.rentalOrderIdField.AcceptsTab = true;
+            this.rentalOrderIdField.BackColor = System.Drawing.SystemColors.Window;
+            this.rentalOrderIdField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rentalOrderIdField.Location = new System.Drawing.Point(93, 73);
+            this.rentalOrderIdField.Name = "rentalOrderIdField";
+            this.rentalOrderIdField.Size = new System.Drawing.Size(119, 23);
+            this.rentalOrderIdField.TabIndex = 14;
+            this.rentalOrderIdField.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            // 
+            // totalPriceField
+            // 
+            this.totalPriceField.AcceptsTab = true;
+            this.totalPriceField.BackColor = System.Drawing.SystemColors.Window;
+            this.totalPriceField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.totalPriceField.Location = new System.Drawing.Point(556, 73);
+            this.totalPriceField.Name = "totalPriceField";
+            this.totalPriceField.Size = new System.Drawing.Size(119, 23);
+            this.totalPriceField.TabIndex = 20;
+            this.totalPriceField.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // rentStartLabel
+            // 
+            this.rentStartLabel.AutoSize = true;
+            this.rentStartLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rentStartLabel.Location = new System.Drawing.Point(245, 50);
+            this.rentStartLabel.Name = "rentStartLabel";
+            this.rentStartLabel.Size = new System.Drawing.Size(117, 20);
+            this.rentStartLabel.TabIndex = 15;
+            this.rentStartLabel.Text = "Rent Start Date";
+            this.rentStartLabel.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // totalPriceLabel
+            // 
+            this.totalPriceLabel.AutoSize = true;
+            this.totalPriceLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.totalPriceLabel.Location = new System.Drawing.Point(556, 50);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.Size = new System.Drawing.Size(82, 20);
+            this.totalPriceLabel.TabIndex = 19;
+            this.totalPriceLabel.Text = "Total Price";
+            this.totalPriceLabel.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // rentStartField
+            // 
+            this.rentStartField.AcceptsTab = true;
+            this.rentStartField.BackColor = System.Drawing.SystemColors.Window;
+            this.rentStartField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rentStartField.Location = new System.Drawing.Point(245, 73);
+            this.rentStartField.Name = "rentStartField";
+            this.rentStartField.Size = new System.Drawing.Size(119, 23);
+            this.rentStartField.TabIndex = 16;
+            this.rentStartField.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            // 
+            // rentEndField
+            // 
+            this.rentEndField.AcceptsTab = true;
+            this.rentEndField.BackColor = System.Drawing.SystemColors.Window;
+            this.rentEndField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rentEndField.Location = new System.Drawing.Point(400, 73);
+            this.rentEndField.Name = "rentEndField";
+            this.rentEndField.Size = new System.Drawing.Size(119, 23);
+            this.rentEndField.TabIndex = 18;
+            this.rentEndField.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            // 
+            // rentEndLabel
+            // 
+            this.rentEndLabel.AutoSize = true;
+            this.rentEndLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rentEndLabel.Location = new System.Drawing.Point(400, 50);
+            this.rentEndLabel.Name = "rentEndLabel";
+            this.rentEndLabel.Size = new System.Drawing.Size(109, 20);
+            this.rentEndLabel.TabIndex = 17;
+            this.rentEndLabel.Text = "Rent End Date";
+            this.rentEndLabel.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // order_id
+            // 
+            this.order_id.HeaderText = "Order ID";
+            this.order_id.Name = "order_id";
+            this.order_id.Width = 225;
+            // 
+            // rent_start_date
+            // 
+            this.rent_start_date.HeaderText = "Rent Start Date";
+            this.rent_start_date.Name = "rent_start_date";
+            this.rent_start_date.Width = 225;
+            // 
+            // rent_end_date
+            // 
+            this.rent_end_date.HeaderText = "Rent End Date";
+            this.rent_end_date.Name = "rent_end_date";
+            this.rent_end_date.Width = 225;
+            // 
+            // total_price
+            // 
+            this.total_price.HeaderText = "Total Price";
+            this.total_price.Name = "total_price";
+            this.total_price.Width = 225;
             // 
             // CarRentalSystem
             // 
@@ -640,16 +704,16 @@
             this.tabControl1.ResumeLayout(false);
             this.carList.ResumeLayout(false);
             this.carList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.customers.ResumeLayout(false);
             this.customers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.rentedCars.ResumeLayout(false);
             this.rentedCars.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.rentalInfo.ResumeLayout(false);
             this.rentalInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -663,25 +727,25 @@
         private TabPage rentedCars;
         private TabPage rentalInfo;
         private DataGridView dataGridView2;
-        private Label orderID;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private Label rentStart;
-        private Label totalPrice;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private Label rentEnd;
+        private Label rentalOrderIdLabel;
+        private TextBox rentalOrderIdField;
+        private TextBox totalPriceField;
+        private Label rentStartLabel;
+        private Label totalPriceLabel;
+        private TextBox rentStartField;
+        private TextBox rentEndField;
+        private Label rentEndLabel;
         private DataGridView dataGridView1;
-        private TextBox textBox5;
-        private Label Make;
-        private Label DailyPrice;
-        private TextBox textBox1;
-        private TextBox textBox4;
-        private Label Model;
-        private Label Color;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Label Year;
+        private TextBox dailyPriceField;
+        private Label makeLabel;
+        private Label dailyPriceLabel;
+        private TextBox makeField;
+        private TextBox colorField;
+        private Label modelLabel;
+        private Label colorLabel;
+        private TextBox modelField;
+        private TextBox yearField;
+        private Label yearLabel;
         private DataGridView dataGridView4;
         private TextBox textBox16;
         private Label label7;
@@ -704,6 +768,14 @@
         private TextBox textBox14;
         private TextBox textBox15;
         private Label label6;
-        private TextBox textBox6;
+        private DataGridViewTextBoxColumn make;
+        private DataGridViewTextBoxColumn model;
+        private DataGridViewTextBoxColumn year;
+        private DataGridViewTextBoxColumn color;
+        private DataGridViewTextBoxColumn daily_price;
+        private DataGridViewTextBoxColumn order_id;
+        private DataGridViewTextBoxColumn rent_start_date;
+        private DataGridViewTextBoxColumn rent_end_date;
+        private DataGridViewTextBoxColumn total_price;
     }
 }

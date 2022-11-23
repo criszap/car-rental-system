@@ -8,23 +8,23 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\alexr\\.nuget\\packages\\": {}
+    "C:\\Users\\czapa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Car Rental Database\\DBProject\\DBProject.csproj",
+      "projectUniqueName": "C:\\Users\\czapa\\OneDrive\\8. FALL 2022\\Introduction to Database Systems\\hw\\project\\DBProject\\DBProject.csproj",
       "projectName": "DBProject",
-      "projectPath": "D:\\Car Rental Database\\DBProject\\DBProject.csproj",
-      "packagesPath": "C:\\Users\\alexr\\.nuget\\packages\\",
-      "outputPath": "D:\\Car Rental Database\\DBProject\\obj\\",
+      "projectPath": "C:\\Users\\czapa\\OneDrive\\8. FALL 2022\\Introduction to Database Systems\\hw\\project\\DBProject\\DBProject.csproj",
+      "packagesPath": "C:\\Users\\czapa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\czapa\\OneDrive\\8. FALL 2022\\Introduction to Database Systems\\hw\\project\\DBProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alexr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\czapa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

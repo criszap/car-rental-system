@@ -1,0 +1,17 @@
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.csproj.AssemblyReference.cache
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.csproj.GenerateResource.cache
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.AssemblyInfoInputs.cache
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.AssemblyInfo.cs
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.csproj.CoreCompileInputs.cache
+D:\Car Rental Database\DBProject\bin\Debug\net6.0-windows\DBProject.exe
+D:\Car Rental Database\DBProject\bin\Debug\net6.0-windows\DBProject.deps.json
+D:\Car Rental Database\DBProject\bin\Debug\net6.0-windows\DBProject.runtimeconfig.json
+D:\Car Rental Database\DBProject\bin\Debug\net6.0-windows\DBProject.dll
+D:\Car Rental Database\DBProject\bin\Debug\net6.0-windows\ref\DBProject.dll
+D:\Car Rental Database\DBProject\bin\Debug\net6.0-windows\DBProject.pdb
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.CarRentalSystem.resources
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.dll
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\ref\DBProject.dll
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.pdb
+D:\Car Rental Database\DBProject\obj\Debug\net6.0-windows\DBProject.genruntimeconfig.cache

@@ -354,3 +354,4 @@ MigrationBackup/
 DBProject/.vs/
 DBProject/bin/
 DBProject/obj/
+.vs/

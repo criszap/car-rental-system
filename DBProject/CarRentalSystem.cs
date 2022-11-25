@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Web;
+using System.Diagnostics;
 
 namespace DBProject
 {
@@ -52,9 +53,43 @@ namespace DBProject
                 using (var sqlite = new SQLiteConnection(@"Data Source =" + path))
                 {
                     sqlite.Open();
-                    string sql = "CREATE TABLE CAR_LIST(CAR_ID INT PRIMARY_KEY, MAKE TEXT, MODEL TEXT, YEAR INT, COLOR TEXT, DAILY_PRICE INT, AVAILABLE TEXT);";
-                    SQLiteCommand command = new SQLiteCommand(sql, sqlite);
-                    command.ExecuteNonQuery();
+                    string sql = "CREATE TABLE CAR_LIST(" +
+                        "CAR_ID INT PRIMARY_KEY, " +
+                        "MAKE TEXT, " +
+                        "MODEL TEXT, " +
+                        "YEAR INT, " +
+                        "COLOR TEXT, " +
+                        "DAILY_PRICE INT, " +
+                        "AVAILABLE TEXT);";
+                    SQLiteCommand CARLISTcommand = new SQLiteCommand(sql, sqlite);
+                    CARLISTcommand.ExecuteNonQuery();
+
+                    sql = "CREATE TABLE CUSTOMERS(" +
+                        "CUST_ID INT PRIMARY KEY, " +
+                        "FIRST_NAME TEXT, " +
+                        "LAST_NAME TEXT, " +
+                        "EMAIL TEXT);" ;
+                    SQLiteCommand CUSTOMERScommand = new SQLiteCommand(sql, sqlite);
+                    CUSTOMERScommand.ExecuteNonQuery();
+
+                    sql = "CREATE TABLE RENTED_CARS(" +
+                        "ORDER_ID INT PRIMARY KEY, " +
+                        "CAR_ID INT, " +
+                        "CUST_ID INT, " +
+                        "CITY TEXT, " +
+                        "STATE TEXT, " +
+                        "FOREIGN KEY (CAR_ID) REFERENCES CAR_LIST(CAR_ID), " +
+                        "FOREIGN KEY (CUST_ID) REFERENCES CUSTOMERS(CUST_ID));";
+                    SQLiteCommand RENTEDCARScommand = new SQLiteCommand(sql, sqlite);
+                    RENTEDCARScommand.ExecuteNonQuery();
+
+                    sql = "CREATE TABLE RENTAL_INFO(" +
+                        "ORDER_ID INT PRIMARY KEY, " +
+                        "RENT_START TEXT, " +
+                        "RENT_END TEXT, " +
+                        "TOTAL_PRICE INT);";
+                    SQLiteCommand RENTALINFOcommand = new SQLiteCommand(sql, sqlite);
+                    RENTALINFOcommand.ExecuteNonQuery();
                 }
             }
             else

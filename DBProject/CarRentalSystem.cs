@@ -129,8 +129,9 @@ namespace DBProject
             var con = new SQLiteConnection(cs);
             con.Open();
             var cmd = new SQLiteCommand(con);
-            cmd.CommandText = "INSERT INTO car_list(make, model, year, color, daily_price, available) VALUES (@make, @model, @year, @color, @daily_price, @available)";
+            cmd.CommandText = "INSERT INTO car_list(car_id, make, model, year, color, daily_price, available) VALUES (@car_id, @make, @model, @year, @color, @daily_price, @available)";
 
+            string CAR_ID = "1";
             string MAKE = makeField.Text;
             string MODEL = modelField.Text;
             string YEAR = yearField.Text;
@@ -138,6 +139,7 @@ namespace DBProject
             string DAILY_PRICE = dailyPriceField.Text;
             string AVAILABLE = availableField.Text;
 
+            cmd.Parameters.AddWithValue("@car_id", CAR_ID);
             cmd.Parameters.AddWithValue("@make", MAKE);
             cmd.Parameters.AddWithValue("@model", MODEL);
             cmd.Parameters.AddWithValue("@year", YEAR);
@@ -145,14 +147,15 @@ namespace DBProject
             cmd.Parameters.AddWithValue("@daily_price", DAILY_PRICE);
             cmd.Parameters.AddWithValue("@available", AVAILABLE);
 
-            car_list.ColumnCount = 6;
-            car_list.Columns[0].Name = "Make";
-            car_list.Columns[1].Name = "Model";
-            car_list.Columns[2].Name = "Year";
-            car_list.Columns[3].Name = "Color";
-            car_list.Columns[4].Name = "Daily Price";
-            car_list.Columns[5].Name = "Available";
-            string[] row = new string[] { MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE };
+            car_list.ColumnCount = 7;
+            car_list.Columns[0].Name = "Car ID";
+            car_list.Columns[1].Name = "Make";
+            car_list.Columns[2].Name = "Model";
+            car_list.Columns[3].Name = "Year";
+            car_list.Columns[4].Name = "Color";
+            car_list.Columns[5].Name = "Daily Price";
+            car_list.Columns[6].Name = "Available";
+            string[] row = new string[] { CAR_ID, MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE };
             car_list.Rows.Add(row);
 
             cmd.ExecuteNonQuery();

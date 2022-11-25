@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Web;
 
 namespace DBProject
 {
@@ -25,7 +26,6 @@ namespace DBProject
         public CarRentalSystem()
         {
             InitializeComponent();
-            data_show();
         }
 
         //show data in car table
@@ -67,6 +67,68 @@ namespace DBProject
         private void CarList_Load(object sender, EventArgs e)
         {
             Create_db();
+            data_show();
+        }
+
+        private void insert_car_list_Click_1(object sender, EventArgs e) {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                cmd.CommandText = "INSERT INTO CAR_LIST(CAR_ID, MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE) " +
+                   "VALUES(@CAR_ID, @MAKE, @MODEL, @YEAR, @COLOR, @DAILY_PRICE, @AVAILABLE)";
+
+                string CAR_ID = "5";
+                string MAKE = makeField.Text;
+                string MODEL = modelField.Text;
+                string YEAR = yearField.Text;
+                string COLOR = colorField.Text;
+                string DAILY_PRICE = dailyPriceField.Text;
+                string AVAILABLE = "";
+
+                if (availableField.Checked)
+                {
+                    AVAILABLE = "Y";
+                }
+                else
+                {
+                    AVAILABLE = "N";
+                }
+
+                cmd.Parameters.AddWithValue("@CAR_ID", CAR_ID);
+                cmd.Parameters.AddWithValue("@MAKE", MAKE);
+                cmd.Parameters.AddWithValue("@MODEL", MODEL);
+                cmd.Parameters.AddWithValue("@YEAR", YEAR);
+                cmd.Parameters.AddWithValue("@COLOR", COLOR);
+                cmd.Parameters.AddWithValue("@DAILY_PRICE", DAILY_PRICE);
+                cmd.Parameters.AddWithValue("@AVAILABLE", AVAILABLE);
+
+                car_list.ColumnCount = 7;
+                car_list.Columns[0].Name = "Car ID";
+                car_list.Columns[1].Name = "Make";
+                car_list.Columns[2].Name = "Model";
+                car_list.Columns[3].Name = "Year";
+                car_list.Columns[4].Name = "Color";
+                car_list.Columns[5].Name = "Daily Price";
+                car_list.Columns[6].Name = "Available";
+
+                string[] row = new string[] { CAR_ID, MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE };
+                car_list.Rows.Add(row);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot insert data");
+                return;
+            }
+        }
+
+        private void insert_car_list_Click(object sender, EventArgs e) {
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -124,42 +186,7 @@ namespace DBProject
 
         }
 
-        private void Insert_car_list_Click(object sender, EventArgs e)
-        {
-            var con = new SQLiteConnection(cs);
-            con.Open();
-            var cmd = new SQLiteCommand(con);
-            cmd.CommandText = "INSERT INTO car_list(car_id, make, model, year, color, daily_price, available) VALUES (@car_id, @make, @model, @year, @color, @daily_price, @available)";
 
-            string CAR_ID = "1";
-            string MAKE = makeField.Text;
-            string MODEL = modelField.Text;
-            string YEAR = yearField.Text;
-            string COLOR = colorField.Text;
-            string DAILY_PRICE = dailyPriceField.Text;
-            string AVAILABLE = availableField.Text;
-
-            cmd.Parameters.AddWithValue("@car_id", CAR_ID);
-            cmd.Parameters.AddWithValue("@make", MAKE);
-            cmd.Parameters.AddWithValue("@model", MODEL);
-            cmd.Parameters.AddWithValue("@year", YEAR);
-            cmd.Parameters.AddWithValue("@color", COLOR);
-            cmd.Parameters.AddWithValue("@daily_price", DAILY_PRICE);
-            cmd.Parameters.AddWithValue("@available", AVAILABLE);
-
-            car_list.ColumnCount = 7;
-            car_list.Columns[0].Name = "Car ID";
-            car_list.Columns[1].Name = "Make";
-            car_list.Columns[2].Name = "Model";
-            car_list.Columns[3].Name = "Year";
-            car_list.Columns[4].Name = "Color";
-            car_list.Columns[5].Name = "Daily Price";
-            car_list.Columns[6].Name = "Available";
-            string[] row = new string[] { CAR_ID, MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE };
-            car_list.Rows.Add(row);
-
-            cmd.ExecuteNonQuery();
-        }
 
         private void label1_Click_2(object sender, EventArgs e)
         {
@@ -235,5 +262,6 @@ namespace DBProject
         {
 
         }
+        
     }
 }

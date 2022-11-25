@@ -35,6 +35,13 @@
             this.availableField = new System.Windows.Forms.CheckBox();
             this.insert_car_list = new System.Windows.Forms.Button();
             this.car_list = new System.Windows.Forms.DataGridView();
+            this.carID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.make = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daily_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dailyPriceField = new System.Windows.Forms.TextBox();
             this.makeLabel = new System.Windows.Forms.Label();
             this.dailyPriceLabel = new System.Windows.Forms.Label();
@@ -90,13 +97,6 @@
             this.rentStartField = new System.Windows.Forms.TextBox();
             this.rentEndField = new System.Windows.Forms.TextBox();
             this.rentEndLabel = new System.Windows.Forms.Label();
-            this.carID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.make = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.daily_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
@@ -172,6 +172,7 @@
             this.insert_car_list.TabIndex = 24;
             this.insert_car_list.Text = "Insert";
             this.insert_car_list.UseVisualStyleBackColor = true;
+            this.insert_car_list.Click += new System.EventHandler(this.insert_car_list_Click_1);
             // 
             // car_list
             // 
@@ -190,6 +191,48 @@
             this.car_list.Size = new System.Drawing.Size(941, 336);
             this.car_list.TabIndex = 23;
             this.car_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // carID
+            // 
+            this.carID.HeaderText = "Car ID";
+            this.carID.Name = "carID";
+            this.carID.Width = 125;
+            // 
+            // make
+            // 
+            this.make.HeaderText = "Make";
+            this.make.Name = "make";
+            this.make.Width = 125;
+            // 
+            // model
+            // 
+            this.model.HeaderText = "Model";
+            this.model.Name = "model";
+            this.model.Width = 125;
+            // 
+            // year
+            // 
+            this.year.HeaderText = "Year";
+            this.year.Name = "year";
+            this.year.Width = 125;
+            // 
+            // color
+            // 
+            this.color.HeaderText = "Color";
+            this.color.Name = "color";
+            this.color.Width = 125;
+            // 
+            // daily_price
+            // 
+            this.daily_price.HeaderText = "Daily Price";
+            this.daily_price.Name = "daily_price";
+            this.daily_price.Width = 125;
+            // 
+            // available
+            // 
+            this.available.HeaderText = "Available";
+            this.available.Name = "available";
+            this.available.Width = 125;
             // 
             // dailyPriceField
             // 
@@ -739,48 +782,6 @@
             this.rentEndLabel.TabIndex = 17;
             this.rentEndLabel.Text = "Rent End Date";
             this.rentEndLabel.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // carID
-            // 
-            this.carID.HeaderText = "Car ID";
-            this.carID.Name = "carID";
-            this.carID.Width = 125;
-            // 
-            // make
-            // 
-            this.make.HeaderText = "Make";
-            this.make.Name = "make";
-            this.make.Width = 125;
-            // 
-            // model
-            // 
-            this.model.HeaderText = "Model";
-            this.model.Name = "model";
-            this.model.Width = 125;
-            // 
-            // year
-            // 
-            this.year.HeaderText = "Year";
-            this.year.Name = "year";
-            this.year.Width = 125;
-            // 
-            // color
-            // 
-            this.color.HeaderText = "Color";
-            this.color.Name = "color";
-            this.color.Width = 125;
-            // 
-            // daily_price
-            // 
-            this.daily_price.HeaderText = "Daily Price";
-            this.daily_price.Name = "daily_price";
-            this.daily_price.Width = 125;
-            // 
-            // available
-            // 
-            this.available.HeaderText = "Available";
-            this.available.Name = "available";
-            this.available.Width = 125;
             // 
             // CarRentalSystem
             // 

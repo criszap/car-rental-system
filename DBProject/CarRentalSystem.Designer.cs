@@ -32,12 +32,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.carList = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.availableField = new System.Windows.Forms.CheckBox();
+            this.insert_car_list = new System.Windows.Forms.Button();
+            this.car_list = new System.Windows.Forms.DataGridView();
             this.make = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.daily_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dailyPriceField = new System.Windows.Forms.TextBox();
             this.makeLabel = new System.Windows.Forms.Label();
             this.dailyPriceLabel = new System.Windows.Forms.Label();
@@ -95,7 +98,7 @@
             this.rentEndLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
             this.customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.rentedCars.SuspendLayout();
@@ -128,7 +131,9 @@
             // 
             // carList
             // 
-            this.carList.Controls.Add(this.dataGridView1);
+            this.carList.Controls.Add(this.availableField);
+            this.carList.Controls.Add(this.insert_car_list);
+            this.carList.Controls.Add(this.car_list);
             this.carList.Controls.Add(this.dailyPriceField);
             this.carList.Controls.Add(this.makeLabel);
             this.carList.Controls.Add(this.dailyPriceLabel);
@@ -148,51 +153,77 @@
             this.carList.UseVisualStyleBackColor = true;
             this.carList.Click += new System.EventHandler(this.carList_Click);
             // 
-            // dataGridView1
+            // availableField
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.availableField.AutoSize = true;
+            this.availableField.Location = new System.Drawing.Point(850, 71);
+            this.availableField.Name = "availableField";
+            this.availableField.Size = new System.Drawing.Size(74, 19);
+            this.availableField.TabIndex = 25;
+            this.availableField.Text = "Available";
+            this.availableField.UseVisualStyleBackColor = true;
+            // 
+            // insert_car_list
+            // 
+            this.insert_car_list.Location = new System.Drawing.Point(850, 95);
+            this.insert_car_list.Name = "insert_car_list";
+            this.insert_car_list.Size = new System.Drawing.Size(75, 23);
+            this.insert_car_list.TabIndex = 24;
+            this.insert_car_list.Text = "Insert";
+            this.insert_car_list.UseVisualStyleBackColor = true;
+            // 
+            // car_list
+            // 
+            this.car_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.car_list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.make,
             this.model,
             this.year,
             this.color,
-            this.daily_price});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(941, 336);
-            this.dataGridView1.TabIndex = 23;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.daily_price,
+            this.available});
+            this.car_list.Location = new System.Drawing.Point(6, 124);
+            this.car_list.Name = "car_list";
+            this.car_list.RowTemplate.Height = 25;
+            this.car_list.Size = new System.Drawing.Size(941, 336);
+            this.car_list.TabIndex = 23;
+            this.car_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // make
             // 
             this.make.HeaderText = "Make";
             this.make.Name = "make";
-            this.make.Width = 180;
+            this.make.Width = 150;
             // 
             // model
             // 
             this.model.HeaderText = "Model";
             this.model.Name = "model";
-            this.model.Width = 180;
+            this.model.Width = 150;
             // 
             // year
             // 
             this.year.HeaderText = "Year";
             this.year.Name = "year";
-            this.year.Width = 180;
+            this.year.Width = 150;
             // 
             // color
             // 
             this.color.HeaderText = "Color";
             this.color.Name = "color";
-            this.color.Width = 180;
+            this.color.Width = 150;
             // 
             // daily_price
             // 
             this.daily_price.HeaderText = "Daily Price";
             this.daily_price.Name = "daily_price";
-            this.daily_price.Width = 180;
+            this.daily_price.Width = 150;
+            // 
+            // available
+            // 
+            this.available.HeaderText = "Available";
+            this.available.Name = "available";
+            this.available.Width = 150;
             // 
             // dailyPriceField
             // 
@@ -234,6 +265,7 @@
             this.makeField.Name = "makeField";
             this.makeField.Size = new System.Drawing.Size(119, 23);
             this.makeField.TabIndex = 14;
+            this.makeField.TextChanged += new System.EventHandler(this.makeField_TextChanged);
             // 
             // colorField
             // 
@@ -756,7 +788,7 @@
             this.tabControl1.ResumeLayout(false);
             this.carList.ResumeLayout(false);
             this.carList.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car_list)).EndInit();
             this.customers.ResumeLayout(false);
             this.customers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -787,7 +819,7 @@
         private TextBox rentStartField;
         private TextBox rentEndField;
         private Label rentEndLabel;
-        private DataGridView dataGridView1;
+        private DataGridView car_list;
         private TextBox dailyPriceField;
         private Label makeLabel;
         private Label dailyPriceLabel;
@@ -818,11 +850,6 @@
         private TextBox rcCARIDField;
         private TextBox rcCUSTIDField;
         private Label rcCUSTIDLabel;
-        private DataGridViewTextBoxColumn make;
-        private DataGridViewTextBoxColumn model;
-        private DataGridViewTextBoxColumn year;
-        private DataGridViewTextBoxColumn color;
-        private DataGridViewTextBoxColumn daily_price;
         private DataGridViewTextBoxColumn order_id;
         private DataGridViewTextBoxColumn rent_start_date;
         private DataGridViewTextBoxColumn rent_end_date;
@@ -836,5 +863,13 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn CITY;
         private DataGridViewTextBoxColumn STATE;
+        private Button insert_car_list;
+        private CheckBox availableField;
+        private DataGridViewTextBoxColumn make;
+        private DataGridViewTextBoxColumn model;
+        private DataGridViewTextBoxColumn year;
+        private DataGridViewTextBoxColumn color;
+        private DataGridViewTextBoxColumn daily_price;
+        private DataGridViewTextBoxColumn available;
     }
 }

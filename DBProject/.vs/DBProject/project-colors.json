@@ -5,7 +5,17 @@
       "ProjectGuid": "8f036a52-c706-4040-a2ef-dd1afc780550",
       "DisplayName": "DBProject",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "3f3c6bcc-6af3-4eab-be3f-e945188a8450": {
+      "ProjectGuid": "3f3c6bcc-6af3-4eab-be3f-e945188a8450",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

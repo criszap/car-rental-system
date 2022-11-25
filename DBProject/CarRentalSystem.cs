@@ -14,9 +14,9 @@ namespace DBProject
     public partial class CarRentalSystem : Form
     {
         //path of database
-        string path = "cars.db";
+        string path = "CARRENTALSYSTEM.db";
         //database create debug
-        string cs = @"URI=file:" + Application.StartupPath + "\\cars.db";
+        string cs = @"URI=file:" + Application.StartupPath + "\\CARRENTALSYSTEM.db";
 
         SQLiteConnection con;
         SQLiteCommand cmd;

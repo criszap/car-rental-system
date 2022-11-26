@@ -53,7 +53,8 @@
             this.yearField = new System.Windows.Forms.TextBox();
             this.yearLabel = new System.Windows.Forms.Label();
             this.customers = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.insert_cust_list = new System.Windows.Forms.Button();
+            this.customersTable = new System.Windows.Forms.DataGridView();
             this.CUST_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,7 +102,7 @@
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
             this.customers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersTable)).BeginInit();
             this.rentedCars.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.rentalInfo.SuspendLayout();
@@ -195,43 +196,43 @@
             // 
             this.carID.HeaderText = "Car ID";
             this.carID.Name = "carID";
-            this.carID.Width = 125;
+            this.carID.Width = 130;
             // 
             // make
             // 
             this.make.HeaderText = "Make";
             this.make.Name = "make";
-            this.make.Width = 125;
+            this.make.Width = 130;
             // 
             // model
             // 
             this.model.HeaderText = "Model";
             this.model.Name = "model";
-            this.model.Width = 125;
+            this.model.Width = 130;
             // 
             // year
             // 
             this.year.HeaderText = "Year";
             this.year.Name = "year";
-            this.year.Width = 125;
+            this.year.Width = 130;
             // 
             // color
             // 
             this.color.HeaderText = "Color";
             this.color.Name = "color";
-            this.color.Width = 125;
+            this.color.Width = 130;
             // 
             // daily_price
             // 
             this.daily_price.HeaderText = "Daily Price";
             this.daily_price.Name = "daily_price";
-            this.daily_price.Width = 125;
+            this.daily_price.Width = 130;
             // 
             // available
             // 
             this.available.HeaderText = "Available";
             this.available.Name = "available";
-            this.available.Width = 125;
+            this.available.Width = 130;
             // 
             // dailyPriceField
             // 
@@ -335,7 +336,8 @@
             // 
             // customers
             // 
-            this.customers.Controls.Add(this.dataGridView4);
+            this.customers.Controls.Add(this.insert_cust_list);
+            this.customers.Controls.Add(this.customersTable);
             this.customers.Controls.Add(this.customerIDLabel);
             this.customers.Controls.Add(this.customerIDField);
             this.customers.Controls.Add(this.customerEmailField);
@@ -352,19 +354,29 @@
             this.customers.Text = "Customers";
             this.customers.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // insert_cust_list
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.insert_cust_list.Location = new System.Drawing.Point(850, 95);
+            this.insert_cust_list.Name = "insert_cust_list";
+            this.insert_cust_list.Size = new System.Drawing.Size(75, 23);
+            this.insert_cust_list.TabIndex = 24;
+            this.insert_cust_list.Text = "Insert";
+            this.insert_cust_list.UseVisualStyleBackColor = true;
+            this.insert_cust_list.Click += new System.EventHandler(this.insert_cust_list_Click);
+            // 
+            // customersTable
+            // 
+            this.customersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customersTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CUST_ID,
             this.FIRST_NAME,
             this.LAST_NAME,
             this.EMAIL});
-            this.dataGridView4.Location = new System.Drawing.Point(6, 124);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 25;
-            this.dataGridView4.Size = new System.Drawing.Size(941, 336);
-            this.dataGridView4.TabIndex = 23;
+            this.customersTable.Location = new System.Drawing.Point(6, 124);
+            this.customersTable.Name = "customersTable";
+            this.customersTable.RowTemplate.Height = 25;
+            this.customersTable.Size = new System.Drawing.Size(941, 336);
+            this.customersTable.TabIndex = 23;
             // 
             // CUST_ID
             // 
@@ -788,7 +800,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).EndInit();
             this.customers.ResumeLayout(false);
             this.customers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersTable)).EndInit();
             this.rentedCars.ResumeLayout(false);
             this.rentedCars.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -827,7 +839,7 @@
         private TextBox modelField;
         private TextBox yearField;
         private Label yearLabel;
-        private DataGridView dataGridView4;
+        private DataGridView customersTable;
         private Label customerIDLabel;
         private TextBox customerIDField;
         private TextBox customerEmailField;
@@ -869,5 +881,6 @@
         private DataGridViewTextBoxColumn color;
         private DataGridViewTextBoxColumn daily_price;
         private DataGridViewTextBoxColumn available;
+        private Button insert_cust_list;
     }
 }

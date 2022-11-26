@@ -95,11 +95,12 @@ namespace DBProject {
         // loads CAR_LIST table and shows data
         private void CarList_Load(object sender, EventArgs e) {
             Create_db();
-            showALLData("CAR_LIST");
+            showCarListData("CAR_LIST");
+            //showCustData("CUSTOMERS");
         }
 
-        //show data in car table
-        private void showALLData(string table) {
+        //show data in car_list table
+        private void showCarListData(string table) {
             using (var con = new SQLiteConnection(cs)) {
                 con.Open();
                 string stm = "SELECT * FROM " + table;
@@ -151,13 +152,66 @@ namespace DBProject {
 
                 cmd.ExecuteNonQuery();
                 car_list.Rows.Clear();
-                showALLData("CAR_LIST");
+                showCarListData("CAR_LIST");
             }
             catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
-        }   
+        }
+
+        //show data in car_list table
+        private void showCustData(string table)
+        {
+            using (var con = new SQLiteConnection(cs))
+            {
+                con.Open();
+                string stm = "SELECT * FROM " + table;
+                var cmd = new SQLiteCommand(stm, con);
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    car_list.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3));
+                }
+            }
+        }
+
+        // handler for CUSTOMERS insert button
+        private void insert_cust_list_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                cmd.CommandText = "INSERT INTO CUSTOMERS(FIRST_NAME, LAST_NAME, EMAIL) " +
+                   "VALUES(@FIRST_NAME, @LAST_NAME, @EMAIL)";
+
+                var max_id_cmd = new SQLiteCommand(con);
+                max_id_cmd.CommandText = "SELECT MAX(CUST_ID) FROM CUSTOMERS";
+
+                string FIRST_NAME = customerFNField.Text;
+                string LAST_NAME = customerLNField.Text;
+                string EMAIL = customerEmailField.Text;
+
+                cmd.Parameters.AddWithValue("@FIRST_NAME", FIRST_NAME);
+                cmd.Parameters.AddWithValue("@LAST_NAME", LAST_NAME);
+                cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
+
+
+                cmd.ExecuteNonQuery();
+                customersTable.Rows.Clear();
+                showCustData("CUSTOMERS");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot insert data");
+                return;
+            }
+        }
 
     }
 }

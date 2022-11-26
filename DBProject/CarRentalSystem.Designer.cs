@@ -82,6 +82,7 @@
             this.rcCUSTIDField = new System.Windows.Forms.TextBox();
             this.rcCUSTIDLabel = new System.Windows.Forms.Label();
             this.rentalInfo = new System.Windows.Forms.TabPage();
+            this.insert_rental_info = new System.Windows.Forms.Button();
             this.rentalInfoTable = new System.Windows.Forms.DataGridView();
             this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rent_start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,13 +90,10 @@
             this.total_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentalOrderIdLabel = new System.Windows.Forms.Label();
             this.rentalOrderIdField = new System.Windows.Forms.TextBox();
-            this.totalPriceField = new System.Windows.Forms.TextBox();
             this.rentStartLabel = new System.Windows.Forms.Label();
-            this.totalPriceLabel = new System.Windows.Forms.Label();
             this.rentStartField = new System.Windows.Forms.TextBox();
             this.rentEndField = new System.Windows.Forms.TextBox();
             this.rentEndLabel = new System.Windows.Forms.Label();
-            this.insert_rental_info = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
@@ -618,9 +616,7 @@
             this.rentalInfo.Controls.Add(this.rentalInfoTable);
             this.rentalInfo.Controls.Add(this.rentalOrderIdLabel);
             this.rentalInfo.Controls.Add(this.rentalOrderIdField);
-            this.rentalInfo.Controls.Add(this.totalPriceField);
             this.rentalInfo.Controls.Add(this.rentStartLabel);
-            this.rentalInfo.Controls.Add(this.totalPriceLabel);
             this.rentalInfo.Controls.Add(this.rentStartField);
             this.rentalInfo.Controls.Add(this.rentEndField);
             this.rentalInfo.Controls.Add(this.rentEndLabel);
@@ -630,6 +626,16 @@
             this.rentalInfo.TabIndex = 3;
             this.rentalInfo.Text = "Rental Info";
             this.rentalInfo.UseVisualStyleBackColor = true;
+            // 
+            // insert_rental_info
+            // 
+            this.insert_rental_info.Location = new System.Drawing.Point(850, 95);
+            this.insert_rental_info.Name = "insert_rental_info";
+            this.insert_rental_info.Size = new System.Drawing.Size(75, 23);
+            this.insert_rental_info.TabIndex = 24;
+            this.insert_rental_info.Text = "Insert";
+            this.insert_rental_info.UseVisualStyleBackColor = true;
+            this.insert_rental_info.Click += new System.EventHandler(this.insert_rental_info_Click);
             // 
             // rentalInfoTable
             // 
@@ -689,16 +695,6 @@
             this.rentalOrderIdField.Size = new System.Drawing.Size(119, 23);
             this.rentalOrderIdField.TabIndex = 14;
             // 
-            // totalPriceField
-            // 
-            this.totalPriceField.AcceptsTab = true;
-            this.totalPriceField.BackColor = System.Drawing.SystemColors.Window;
-            this.totalPriceField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.totalPriceField.Location = new System.Drawing.Point(556, 73);
-            this.totalPriceField.Name = "totalPriceField";
-            this.totalPriceField.Size = new System.Drawing.Size(119, 23);
-            this.totalPriceField.TabIndex = 20;
-            // 
             // rentStartLabel
             // 
             this.rentStartLabel.AutoSize = true;
@@ -708,16 +704,6 @@
             this.rentStartLabel.Size = new System.Drawing.Size(117, 20);
             this.rentStartLabel.TabIndex = 15;
             this.rentStartLabel.Text = "Rent Start Date";
-            // 
-            // totalPriceLabel
-            // 
-            this.totalPriceLabel.AutoSize = true;
-            this.totalPriceLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.totalPriceLabel.Location = new System.Drawing.Point(556, 50);
-            this.totalPriceLabel.Name = "totalPriceLabel";
-            this.totalPriceLabel.Size = new System.Drawing.Size(82, 20);
-            this.totalPriceLabel.TabIndex = 19;
-            this.totalPriceLabel.Text = "Total Price";
             // 
             // rentStartField
             // 
@@ -748,16 +734,6 @@
             this.rentEndLabel.Size = new System.Drawing.Size(109, 20);
             this.rentEndLabel.TabIndex = 17;
             this.rentEndLabel.Text = "Rent End Date";
-            // 
-            // insert_rental_info
-            // 
-            this.insert_rental_info.Location = new System.Drawing.Point(850, 95);
-            this.insert_rental_info.Name = "insert_rental_info";
-            this.insert_rental_info.Size = new System.Drawing.Size(75, 23);
-            this.insert_rental_info.TabIndex = 24;
-            this.insert_rental_info.Text = "Insert";
-            this.insert_rental_info.UseVisualStyleBackColor = true;
-            this.insert_rental_info.Click += new System.EventHandler(this.insert_rental_info_Click);
             // 
             // CarRentalSystem
             // 
@@ -798,9 +774,7 @@
         private DataGridView rentalInfoTable;
         private Label rentalOrderIdLabel;
         private TextBox rentalOrderIdField;
-        private TextBox totalPriceField;
         private Label rentStartLabel;
-        private Label totalPriceLabel;
         private TextBox rentStartField;
         private TextBox rentEndField;
         private Label rentEndLabel;

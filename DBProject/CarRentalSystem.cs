@@ -285,6 +285,29 @@ namespace DBProject {
             }
         }
 
+        private string getTotalPrice(string orderID)
+        {
+            using (var con = new SQLiteConnection(cs))
+            {
+                string total = "";
+
+                con.Open();
+                string stm = "SELECT MAX(CAR_LIST.DAILY_PRICE) " +
+                             "FROM CAR_LIST " +
+                             " JOIN RENTED_CARS " +
+                             " ON CAR_LIST.CAR_ID = RENTED_CARS.CAR_ID " +
+                             " JOIN RENTAL_INFO " +
+                             " ON RENTED_CARS.ORDER_ID = RENTAL_INFO.ORDER_ID " +
+                             " WHERE RENTED_CARS.ORDER_ID = " + orderID + " limit 1;";
+
+                var cmd = new SQLiteCommand(stm, con);
+                total = cmd.ExecuteScalar().ToString();
+
+
+                return total;
+            }
+        }
+
         private void insert_rental_info_Click(object sender, EventArgs e)
         {
             var con = new SQLiteConnection(cs);
@@ -303,7 +326,7 @@ namespace DBProject {
                 string ORDER_ID = rentalOrderIdField.Text;
                 string RENT_START = rentStartField.Text;
                 string RENT_END = rentEndField.Text;
-                string TOTAL_PRICE = totalPriceField.Text;
+                string TOTAL_PRICE = getTotalPrice(ORDER_ID);
 
                 cmd.Parameters.AddWithValue("@ORDER_ID", ORDER_ID);
                 cmd.Parameters.AddWithValue("@RENT_START", RENT_START);

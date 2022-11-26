@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Web;
 using System.Diagnostics;
-using System.Globalization;
 
 namespace DBProject {
     public partial class CarRentalSystem : Form {
@@ -301,10 +300,10 @@ namespace DBProject {
                 var cmd = new SQLiteCommand(stm, con);
                 daily_price = cmd.ExecuteScalar().ToString();
 
-                var end_date = DateTime.ParseExact(RENT_END, "MM-dd-yyyy", null);
-                var start_date = DateTime.ParseExact(RENT_START, "MM-dd-yyyy", null);
+                var end_date = DateTime.ParseExact(RENT_END, "MM/dd/yyyy", null);
+                var start_date = DateTime.ParseExact(RENT_START, "MM/dd/yyyy", null);
 
-                var day_diff = (end_date - start_date).TotalDays;
+                var day_diff = end_date.Subtract(start_date).Days;
 
                 return "";
             }

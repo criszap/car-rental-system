@@ -66,6 +66,7 @@
             this.customerLNField = new System.Windows.Forms.TextBox();
             this.customerLNLabel = new System.Windows.Forms.Label();
             this.rentedCars = new System.Windows.Forms.TabPage();
+            this.insert_rented_cars = new System.Windows.Forms.Button();
             this.rentedCarsTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAR_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +82,7 @@
             this.rcCUSTIDField = new System.Windows.Forms.TextBox();
             this.rcCUSTIDLabel = new System.Windows.Forms.Label();
             this.rentalInfo = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.rentalInfoTable = new System.Windows.Forms.DataGridView();
             this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rent_start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rent_end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,7 +95,7 @@
             this.rentStartField = new System.Windows.Forms.TextBox();
             this.rentEndField = new System.Windows.Forms.TextBox();
             this.rentEndLabel = new System.Windows.Forms.Label();
-            this.insert_rented_cars = new System.Windows.Forms.Button();
+            this.insert_rental_info = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
@@ -103,7 +104,7 @@
             this.rentedCars.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentedCarsTable)).BeginInit();
             this.rentalInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentalInfoTable)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -476,6 +477,16 @@
             this.rentedCars.Text = "Rented Cars";
             this.rentedCars.UseVisualStyleBackColor = true;
             // 
+            // insert_rented_cars
+            // 
+            this.insert_rented_cars.Location = new System.Drawing.Point(850, 95);
+            this.insert_rented_cars.Name = "insert_rented_cars";
+            this.insert_rented_cars.Size = new System.Drawing.Size(75, 23);
+            this.insert_rented_cars.TabIndex = 24;
+            this.insert_rented_cars.Text = "Insert";
+            this.insert_rented_cars.UseVisualStyleBackColor = true;
+            this.insert_rented_cars.Click += new System.EventHandler(this.insert_rented_cars_Click);
+            // 
             // rentedCarsTable
             // 
             this.rentedCarsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -603,7 +614,8 @@
             // 
             // rentalInfo
             // 
-            this.rentalInfo.Controls.Add(this.dataGridView2);
+            this.rentalInfo.Controls.Add(this.insert_rental_info);
+            this.rentalInfo.Controls.Add(this.rentalInfoTable);
             this.rentalInfo.Controls.Add(this.rentalOrderIdLabel);
             this.rentalInfo.Controls.Add(this.rentalOrderIdField);
             this.rentalInfo.Controls.Add(this.totalPriceField);
@@ -619,19 +631,19 @@
             this.rentalInfo.Text = "Rental Info";
             this.rentalInfo.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // rentalInfoTable
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rentalInfoTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentalInfoTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.order_id,
             this.rent_start_date,
             this.rent_end_date,
             this.total_price});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 124);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(941, 336);
-            this.dataGridView2.TabIndex = 23;
+            this.rentalInfoTable.Location = new System.Drawing.Point(6, 124);
+            this.rentalInfoTable.Name = "rentalInfoTable";
+            this.rentalInfoTable.RowTemplate.Height = 25;
+            this.rentalInfoTable.Size = new System.Drawing.Size(941, 336);
+            this.rentalInfoTable.TabIndex = 23;
             // 
             // order_id
             // 
@@ -737,15 +749,15 @@
             this.rentEndLabel.TabIndex = 17;
             this.rentEndLabel.Text = "Rent End Date";
             // 
-            // insert_rented_cars
+            // insert_rental_info
             // 
-            this.insert_rented_cars.Location = new System.Drawing.Point(850, 95);
-            this.insert_rented_cars.Name = "insert_rented_cars";
-            this.insert_rented_cars.Size = new System.Drawing.Size(75, 23);
-            this.insert_rented_cars.TabIndex = 24;
-            this.insert_rented_cars.Text = "Insert";
-            this.insert_rented_cars.UseVisualStyleBackColor = true;
-            this.insert_rented_cars.Click += new System.EventHandler(this.insert_rented_cars_Click);
+            this.insert_rental_info.Location = new System.Drawing.Point(850, 95);
+            this.insert_rental_info.Name = "insert_rental_info";
+            this.insert_rental_info.Size = new System.Drawing.Size(75, 23);
+            this.insert_rental_info.TabIndex = 24;
+            this.insert_rental_info.Text = "Insert";
+            this.insert_rental_info.UseVisualStyleBackColor = true;
+            this.insert_rental_info.Click += new System.EventHandler(this.insert_rental_info_Click);
             // 
             // CarRentalSystem
             // 
@@ -770,7 +782,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rentedCarsTable)).EndInit();
             this.rentalInfo.ResumeLayout(false);
             this.rentalInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentalInfoTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -783,7 +795,7 @@
         private TabPage customers;
         private TabPage rentedCars;
         private TabPage rentalInfo;
-        private DataGridView dataGridView2;
+        private DataGridView rentalInfoTable;
         private Label rentalOrderIdLabel;
         private TextBox rentalOrderIdField;
         private TextBox totalPriceField;
@@ -843,5 +855,6 @@
         private DataGridViewTextBoxColumn available;
         private Button insert_cust_list;
         private Button insert_rented_cars;
+        private Button insert_rental_info;
     }
 }

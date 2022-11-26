@@ -77,9 +77,10 @@ namespace DBProject {
                     // RENTAL_INFO table creation
                     sql = "CREATE TABLE RENTAL_INFO(" +
                             "ORDER_ID INTEGER, " +
-                            "RENT_START TEXT, " +
-                            "RENT_END TEXT, " +
+                            "RENT_START VARCHAR(10), " +
+                            "RENT_END VARCHAR(10), " +
                             "TOTAL_PRICE INTEGER, " +
+                            "FOREIGN KEY (ORDER_ID) REFERENCES RENTED_CARS(ORDER_ID), " +
                             "PRIMARY KEY (ORDER_ID)" +
                           ");";
                     SQLiteCommand RENTALINFOcommand = new SQLiteCommand(sql, sqlite);
@@ -98,6 +99,7 @@ namespace DBProject {
             showCarListData("CAR_LIST");
             showCustData("CUSTOMERS");
             showRentedCarsData("RENTED_CARS");
+            showRentalInfoData("RENTAL_INFO");
         }
 
         //show data in car_list table
@@ -259,6 +261,59 @@ namespace DBProject {
                 cmd.ExecuteNonQuery();
                 rentedCarsTable.Rows.Clear();
                 showRentedCarsData("RENTED_CARS");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot insert data");
+                return;
+            }
+        }
+
+        private void showRentalInfoData(string table)
+        {
+            using (var con = new SQLiteConnection(cs))
+            {
+                con.Open();
+                string stm = "SELECT * FROM " + table;
+                var cmd = new SQLiteCommand(stm, con);
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    rentalInfoTable.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3));
+                }
+            }
+        }
+
+        private void insert_rental_info_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                cmd.CommandText = "INSERT INTO RENTAL_INFO(ORDER_ID, RENT_START, RENT_END, TOTAL_PRICE) " +
+                   "VALUES(@ORDER_ID, @RENT_START, @RENT_END, @TOTAL_PRICE)";
+
+                //var max_id_cmd = new SQLiteCommand(con);
+                //max_id_cmd.CommandText = "SELECT MAX(ORDER_ID) FROM RENTED_CARS";
+
+                string ORDER_ID = rentalOrderIdField.Text;
+                string RENT_START = rentStartField.Text;
+                string RENT_END = rentEndField.Text;
+                string TOTAL_PRICE = totalPriceField.Text;
+
+                cmd.Parameters.AddWithValue("@ORDER_ID", ORDER_ID);
+                cmd.Parameters.AddWithValue("@RENT_START", RENT_START);
+                cmd.Parameters.AddWithValue("@RENT_END", RENT_END);
+                cmd.Parameters.AddWithValue("@TOTAL_PRICE", TOTAL_PRICE);
+
+
+                cmd.ExecuteNonQuery();
+                rentalInfoTable.Rows.Clear();
+                showRentedCarsData("RENTAL_INFO");
             }
             catch (Exception)
             {

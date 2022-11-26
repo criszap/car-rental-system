@@ -96,7 +96,8 @@ namespace DBProject {
         private void CarList_Load(object sender, EventArgs e) {
             Create_db();
             showCarListData("CAR_LIST");
-            //showCustData("CUSTOMERS");
+            showCustData("CUSTOMERS");
+            showRentedCarsData("RENTED_CARS");
         }
 
         //show data in car_list table
@@ -172,7 +173,7 @@ namespace DBProject {
 
                 while (dr.Read())
                 {
-                    car_list.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3));
+                    customersTable.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3));
                 }
             }
         }
@@ -213,5 +214,57 @@ namespace DBProject {
             }
         }
 
+        private void showRentedCarsData(string table)
+        {
+            using (var con = new SQLiteConnection(cs))
+            {
+                con.Open();
+                string stm = "SELECT * FROM " + table;
+                var cmd = new SQLiteCommand(stm, con);
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    rentedCarsTable.Rows.Insert(0, dr.GetInt32(0), dr.GetInt32(1), dr.GetInt32(2), dr.GetString(3), dr.GetString(4));
+                }
+            }
+        }
+
+        private void insert_rented_cars_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                cmd.CommandText = "INSERT INTO RENTED_CARS(CAR_ID, CUST_ID, CITY, STATE) " +
+                   "VALUES(@CAR_ID, @CUST_ID, @CITY, @STATE)";
+
+                var max_id_cmd = new SQLiteCommand(con);
+                max_id_cmd.CommandText = "SELECT MAX(ORDER_ID) FROM RENTED_CARS";
+
+                string CAR_ID = rcCARIDField.Text;
+                string CUST_ID = rcCUSTIDField.Text;
+                string CITY = rcCITYField.Text;
+                string STATE = rcSTATEField.Text;
+
+                cmd.Parameters.AddWithValue("@CAR_ID", CAR_ID);
+                cmd.Parameters.AddWithValue("@CUST_ID", CUST_ID);
+                cmd.Parameters.AddWithValue("@CITY", CITY);
+                cmd.Parameters.AddWithValue("@STATE", STATE);
+
+
+                cmd.ExecuteNonQuery();
+                rentedCarsTable.Rows.Clear();
+                showRentedCarsData("RENTED_CARS");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot insert data");
+                return;
+            }
+        }
     }
 }

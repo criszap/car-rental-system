@@ -59,8 +59,6 @@
             this.FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerIDLabel = new System.Windows.Forms.Label();
-            this.customerIDField = new System.Windows.Forms.TextBox();
             this.customerEmailField = new System.Windows.Forms.TextBox();
             this.customerFNLabel = new System.Windows.Forms.Label();
             this.customerEmailLabel = new System.Windows.Forms.Label();
@@ -68,16 +66,14 @@
             this.customerLNField = new System.Windows.Forms.TextBox();
             this.customerLNLabel = new System.Windows.Forms.Label();
             this.rentedCars = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.rentedCarsTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAR_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rcSTATEField = new System.Windows.Forms.TextBox();
-            this.rcORDERIDLabel = new System.Windows.Forms.Label();
             this.rcSTATELabel = new System.Windows.Forms.Label();
-            this.rcORDERIDField = new System.Windows.Forms.TextBox();
             this.rcCITYField = new System.Windows.Forms.TextBox();
             this.rcCARIDLabel = new System.Windows.Forms.Label();
             this.rcCITYLabel = new System.Windows.Forms.Label();
@@ -98,13 +94,14 @@
             this.rentStartField = new System.Windows.Forms.TextBox();
             this.rentEndField = new System.Windows.Forms.TextBox();
             this.rentEndLabel = new System.Windows.Forms.Label();
+            this.insert_rented_cars = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
             this.customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersTable)).BeginInit();
             this.rentedCars.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentedCarsTable)).BeginInit();
             this.rentalInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -338,8 +335,6 @@
             // 
             this.customers.Controls.Add(this.insert_cust_list);
             this.customers.Controls.Add(this.customersTable);
-            this.customers.Controls.Add(this.customerIDLabel);
-            this.customers.Controls.Add(this.customerIDField);
             this.customers.Controls.Add(this.customerEmailField);
             this.customers.Controls.Add(this.customerFNLabel);
             this.customers.Controls.Add(this.customerEmailLabel);
@@ -402,32 +397,12 @@
             this.EMAIL.Name = "EMAIL";
             this.EMAIL.Width = 225;
             // 
-            // customerIDLabel
-            // 
-            this.customerIDLabel.AutoSize = true;
-            this.customerIDLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customerIDLabel.Location = new System.Drawing.Point(93, 50);
-            this.customerIDLabel.Name = "customerIDLabel";
-            this.customerIDLabel.Size = new System.Drawing.Size(97, 20);
-            this.customerIDLabel.TabIndex = 13;
-            this.customerIDLabel.Text = "Customer ID";
-            // 
-            // customerIDField
-            // 
-            this.customerIDField.AcceptsTab = true;
-            this.customerIDField.BackColor = System.Drawing.SystemColors.Window;
-            this.customerIDField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customerIDField.Location = new System.Drawing.Point(93, 73);
-            this.customerIDField.Name = "customerIDField";
-            this.customerIDField.Size = new System.Drawing.Size(119, 23);
-            this.customerIDField.TabIndex = 14;
-            // 
             // customerEmailField
             // 
             this.customerEmailField.AcceptsTab = true;
             this.customerEmailField.BackColor = System.Drawing.SystemColors.Window;
             this.customerEmailField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customerEmailField.Location = new System.Drawing.Point(556, 73);
+            this.customerEmailField.Location = new System.Drawing.Point(400, 73);
             this.customerEmailField.Name = "customerEmailField";
             this.customerEmailField.Size = new System.Drawing.Size(119, 23);
             this.customerEmailField.TabIndex = 20;
@@ -436,7 +411,7 @@
             // 
             this.customerFNLabel.AutoSize = true;
             this.customerFNLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customerFNLabel.Location = new System.Drawing.Point(245, 50);
+            this.customerFNLabel.Location = new System.Drawing.Point(93, 50);
             this.customerFNLabel.Name = "customerFNLabel";
             this.customerFNLabel.Size = new System.Drawing.Size(86, 20);
             this.customerFNLabel.TabIndex = 15;
@@ -446,7 +421,7 @@
             // 
             this.customerEmailLabel.AutoSize = true;
             this.customerEmailLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customerEmailLabel.Location = new System.Drawing.Point(556, 50);
+            this.customerEmailLabel.Location = new System.Drawing.Point(400, 50);
             this.customerEmailLabel.Name = "customerEmailLabel";
             this.customerEmailLabel.Size = new System.Drawing.Size(47, 20);
             this.customerEmailLabel.TabIndex = 19;
@@ -457,7 +432,7 @@
             this.customerFNField.AcceptsTab = true;
             this.customerFNField.BackColor = System.Drawing.SystemColors.Window;
             this.customerFNField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customerFNField.Location = new System.Drawing.Point(245, 73);
+            this.customerFNField.Location = new System.Drawing.Point(93, 73);
             this.customerFNField.Name = "customerFNField";
             this.customerFNField.Size = new System.Drawing.Size(119, 23);
             this.customerFNField.TabIndex = 16;
@@ -467,7 +442,7 @@
             this.customerLNField.AcceptsTab = true;
             this.customerLNField.BackColor = System.Drawing.SystemColors.Window;
             this.customerLNField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customerLNField.Location = new System.Drawing.Point(400, 73);
+            this.customerLNField.Location = new System.Drawing.Point(245, 73);
             this.customerLNField.Name = "customerLNField";
             this.customerLNField.Size = new System.Drawing.Size(119, 23);
             this.customerLNField.TabIndex = 18;
@@ -476,7 +451,7 @@
             // 
             this.customerLNLabel.AutoSize = true;
             this.customerLNLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customerLNLabel.Location = new System.Drawing.Point(400, 50);
+            this.customerLNLabel.Location = new System.Drawing.Point(245, 50);
             this.customerLNLabel.Name = "customerLNLabel";
             this.customerLNLabel.Size = new System.Drawing.Size(84, 20);
             this.customerLNLabel.TabIndex = 17;
@@ -484,11 +459,10 @@
             // 
             // rentedCars
             // 
-            this.rentedCars.Controls.Add(this.dataGridView3);
+            this.rentedCars.Controls.Add(this.insert_rented_cars);
+            this.rentedCars.Controls.Add(this.rentedCarsTable);
             this.rentedCars.Controls.Add(this.rcSTATEField);
-            this.rentedCars.Controls.Add(this.rcORDERIDLabel);
             this.rentedCars.Controls.Add(this.rcSTATELabel);
-            this.rentedCars.Controls.Add(this.rcORDERIDField);
             this.rentedCars.Controls.Add(this.rcCITYField);
             this.rentedCars.Controls.Add(this.rcCARIDLabel);
             this.rentedCars.Controls.Add(this.rcCITYLabel);
@@ -502,20 +476,20 @@
             this.rentedCars.Text = "Rented Cars";
             this.rentedCars.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // rentedCarsTable
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rentedCarsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentedCarsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.CAR_ID,
             this.dataGridViewTextBoxColumn2,
             this.CITY,
             this.STATE});
-            this.dataGridView3.Location = new System.Drawing.Point(6, 124);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(941, 336);
-            this.dataGridView3.TabIndex = 23;
+            this.rentedCarsTable.Location = new System.Drawing.Point(6, 124);
+            this.rentedCarsTable.Name = "rentedCarsTable";
+            this.rentedCarsTable.RowTemplate.Height = 25;
+            this.rentedCarsTable.Size = new System.Drawing.Size(941, 336);
+            this.rentedCarsTable.TabIndex = 23;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -552,47 +526,27 @@
             this.rcSTATEField.AcceptsTab = true;
             this.rcSTATEField.BackColor = System.Drawing.SystemColors.Window;
             this.rcSTATEField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rcSTATEField.Location = new System.Drawing.Point(703, 73);
+            this.rcSTATEField.Location = new System.Drawing.Point(556, 73);
             this.rcSTATEField.Name = "rcSTATEField";
             this.rcSTATEField.Size = new System.Drawing.Size(119, 23);
             this.rcSTATEField.TabIndex = 22;
-            // 
-            // rcORDERIDLabel
-            // 
-            this.rcORDERIDLabel.AutoSize = true;
-            this.rcORDERIDLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rcORDERIDLabel.Location = new System.Drawing.Point(93, 50);
-            this.rcORDERIDLabel.Name = "rcORDERIDLabel";
-            this.rcORDERIDLabel.Size = new System.Drawing.Size(69, 20);
-            this.rcORDERIDLabel.TabIndex = 13;
-            this.rcORDERIDLabel.Text = "Order ID";
             // 
             // rcSTATELabel
             // 
             this.rcSTATELabel.AutoSize = true;
             this.rcSTATELabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rcSTATELabel.Location = new System.Drawing.Point(703, 50);
+            this.rcSTATELabel.Location = new System.Drawing.Point(556, 50);
             this.rcSTATELabel.Name = "rcSTATELabel";
             this.rcSTATELabel.Size = new System.Drawing.Size(45, 20);
             this.rcSTATELabel.TabIndex = 21;
             this.rcSTATELabel.Text = "State";
-            // 
-            // rcORDERIDField
-            // 
-            this.rcORDERIDField.AcceptsTab = true;
-            this.rcORDERIDField.BackColor = System.Drawing.SystemColors.Window;
-            this.rcORDERIDField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rcORDERIDField.Location = new System.Drawing.Point(93, 73);
-            this.rcORDERIDField.Name = "rcORDERIDField";
-            this.rcORDERIDField.Size = new System.Drawing.Size(119, 23);
-            this.rcORDERIDField.TabIndex = 14;
             // 
             // rcCITYField
             // 
             this.rcCITYField.AcceptsTab = true;
             this.rcCITYField.BackColor = System.Drawing.SystemColors.Window;
             this.rcCITYField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rcCITYField.Location = new System.Drawing.Point(556, 73);
+            this.rcCITYField.Location = new System.Drawing.Point(400, 73);
             this.rcCITYField.Name = "rcCITYField";
             this.rcCITYField.Size = new System.Drawing.Size(119, 23);
             this.rcCITYField.TabIndex = 20;
@@ -601,7 +555,7 @@
             // 
             this.rcCARIDLabel.AutoSize = true;
             this.rcCARIDLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rcCARIDLabel.Location = new System.Drawing.Point(245, 50);
+            this.rcCARIDLabel.Location = new System.Drawing.Point(93, 50);
             this.rcCARIDLabel.Name = "rcCARIDLabel";
             this.rcCARIDLabel.Size = new System.Drawing.Size(52, 20);
             this.rcCARIDLabel.TabIndex = 15;
@@ -611,7 +565,7 @@
             // 
             this.rcCITYLabel.AutoSize = true;
             this.rcCITYLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rcCITYLabel.Location = new System.Drawing.Point(556, 50);
+            this.rcCITYLabel.Location = new System.Drawing.Point(400, 50);
             this.rcCITYLabel.Name = "rcCITYLabel";
             this.rcCITYLabel.Size = new System.Drawing.Size(36, 20);
             this.rcCITYLabel.TabIndex = 19;
@@ -622,7 +576,7 @@
             this.rcCARIDField.AcceptsTab = true;
             this.rcCARIDField.BackColor = System.Drawing.SystemColors.Window;
             this.rcCARIDField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rcCARIDField.Location = new System.Drawing.Point(245, 73);
+            this.rcCARIDField.Location = new System.Drawing.Point(93, 73);
             this.rcCARIDField.Name = "rcCARIDField";
             this.rcCARIDField.Size = new System.Drawing.Size(119, 23);
             this.rcCARIDField.TabIndex = 16;
@@ -632,7 +586,7 @@
             this.rcCUSTIDField.AcceptsTab = true;
             this.rcCUSTIDField.BackColor = System.Drawing.SystemColors.Window;
             this.rcCUSTIDField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rcCUSTIDField.Location = new System.Drawing.Point(400, 73);
+            this.rcCUSTIDField.Location = new System.Drawing.Point(245, 73);
             this.rcCUSTIDField.Name = "rcCUSTIDField";
             this.rcCUSTIDField.Size = new System.Drawing.Size(119, 23);
             this.rcCUSTIDField.TabIndex = 18;
@@ -641,7 +595,7 @@
             // 
             this.rcCUSTIDLabel.AutoSize = true;
             this.rcCUSTIDLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rcCUSTIDLabel.Location = new System.Drawing.Point(400, 50);
+            this.rcCUSTIDLabel.Location = new System.Drawing.Point(245, 50);
             this.rcCUSTIDLabel.Name = "rcCUSTIDLabel";
             this.rcCUSTIDLabel.Size = new System.Drawing.Size(97, 20);
             this.rcCUSTIDLabel.TabIndex = 17;
@@ -783,6 +737,16 @@
             this.rentEndLabel.TabIndex = 17;
             this.rentEndLabel.Text = "Rent End Date";
             // 
+            // insert_rented_cars
+            // 
+            this.insert_rented_cars.Location = new System.Drawing.Point(850, 95);
+            this.insert_rented_cars.Name = "insert_rented_cars";
+            this.insert_rented_cars.Size = new System.Drawing.Size(75, 23);
+            this.insert_rented_cars.TabIndex = 24;
+            this.insert_rented_cars.Text = "Insert";
+            this.insert_rented_cars.UseVisualStyleBackColor = true;
+            this.insert_rented_cars.Click += new System.EventHandler(this.insert_rented_cars_Click);
+            // 
             // CarRentalSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -803,7 +767,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersTable)).EndInit();
             this.rentedCars.ResumeLayout(false);
             this.rentedCars.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentedCarsTable)).EndInit();
             this.rentalInfo.ResumeLayout(false);
             this.rentalInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -840,19 +804,15 @@
         private TextBox yearField;
         private Label yearLabel;
         private DataGridView customersTable;
-        private Label customerIDLabel;
-        private TextBox customerIDField;
         private TextBox customerEmailField;
         private Label customerFNLabel;
         private Label customerEmailLabel;
         private TextBox customerFNField;
         private TextBox customerLNField;
         private Label customerLNLabel;
-        private DataGridView dataGridView3;
+        private DataGridView rentedCarsTable;
         private TextBox rcSTATEField;
-        private Label rcORDERIDLabel;
         private Label rcSTATELabel;
-        private TextBox rcORDERIDField;
         private TextBox rcCITYField;
         private Label rcCARIDLabel;
         private Label rcCITYLabel;
@@ -882,5 +842,6 @@
         private DataGridViewTextBoxColumn daily_price;
         private DataGridViewTextBoxColumn available;
         private Button insert_cust_list;
+        private Button insert_rented_cars;
     }
 }

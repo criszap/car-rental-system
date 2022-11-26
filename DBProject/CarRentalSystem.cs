@@ -313,7 +313,7 @@ namespace DBProject {
 
                 cmd.ExecuteNonQuery();
                 rentalInfoTable.Rows.Clear();
-                showRentedCarsData("RENTAL_INFO");
+                showRentalInfoData("RENTAL_INFO");
             }
             catch (Exception)
             {

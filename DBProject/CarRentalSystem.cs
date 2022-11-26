@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Web;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace DBProject {
     public partial class CarRentalSystem : Form {
@@ -285,11 +286,10 @@ namespace DBProject {
             }
         }
 
-        private string getTotalPrice(string orderID)
-        {
+        private string getTotalPrice(string orderID, string RENT_START, string RENT_END) {
             using (var con = new SQLiteConnection(cs))
             {
-                string total = "";
+                string daily_price = "";
 
                 con.Open();
                 string stm = "SELECT MAX(CAR_LIST.DAILY_PRICE) " +
@@ -299,9 +299,14 @@ namespace DBProject {
                              " WHERE RENTED_CARS.ORDER_ID = " + orderID + " limit 1;";
 
                 var cmd = new SQLiteCommand(stm, con);
-                total = cmd.ExecuteScalar().ToString();
+                daily_price = cmd.ExecuteScalar().ToString();
 
-                return total;
+                var end_date = DateTime.ParseExact(RENT_END, "MM-dd-yyyy", null);
+                var start_date = DateTime.ParseExact(RENT_START, "MM-dd-yyyy", null);
+
+                var day_diff = (end_date - start_date).TotalDays;
+
+                return "";
             }
         }
 
@@ -323,7 +328,7 @@ namespace DBProject {
                 string ORDER_ID = rentalOrderIdField.Text;
                 string RENT_START = rentStartField.Text;
                 string RENT_END = rentEndField.Text;
-                string TOTAL_PRICE = getTotalPrice(ORDER_ID);
+                string TOTAL_PRICE = getTotalPrice(ORDER_ID, RENT_START, RENT_END);
 
                 cmd.Parameters.AddWithValue("@ORDER_ID", ORDER_ID);
                 cmd.Parameters.AddWithValue("@RENT_START", RENT_START);

@@ -296,13 +296,10 @@ namespace DBProject {
                              "FROM CAR_LIST " +
                              " JOIN RENTED_CARS " +
                              " ON CAR_LIST.CAR_ID = RENTED_CARS.CAR_ID " +
-                             " JOIN RENTAL_INFO " +
-                             " ON RENTED_CARS.ORDER_ID = RENTAL_INFO.ORDER_ID " +
                              " WHERE RENTED_CARS.ORDER_ID = " + orderID + " limit 1;";
 
                 var cmd = new SQLiteCommand(stm, con);
                 total = cmd.ExecuteScalar().ToString();
-
 
                 return total;
             }

@@ -152,7 +152,6 @@
             this.carList.TabIndex = 0;
             this.carList.Text = "Car List";
             this.carList.UseVisualStyleBackColor = true;
-            this.carList.Click += new System.EventHandler(this.carList_Click);
             // 
             // availableField
             // 
@@ -172,7 +171,7 @@
             this.insert_car_list.TabIndex = 24;
             this.insert_car_list.Text = "Insert";
             this.insert_car_list.UseVisualStyleBackColor = true;
-            this.insert_car_list.Click += new System.EventHandler(this.insert_car_list_Click_1);
+            this.insert_car_list.Click += new System.EventHandler(this.insert_car_list_Click);
             // 
             // car_list
             // 
@@ -185,12 +184,12 @@
             this.color,
             this.daily_price,
             this.available});
+            this.car_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.car_list.Location = new System.Drawing.Point(6, 124);
             this.car_list.Name = "car_list";
             this.car_list.RowTemplate.Height = 25;
             this.car_list.Size = new System.Drawing.Size(941, 336);
             this.car_list.TabIndex = 23;
-            this.car_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // carID
             // 
@@ -253,7 +252,6 @@
             this.makeLabel.Size = new System.Drawing.Size(47, 20);
             this.makeLabel.TabIndex = 13;
             this.makeLabel.Text = "Make";
-            this.makeLabel.Click += new System.EventHandler(this.Make_Click_1);
             // 
             // dailyPriceLabel
             // 
@@ -274,7 +272,6 @@
             this.makeField.Name = "makeField";
             this.makeField.Size = new System.Drawing.Size(119, 23);
             this.makeField.TabIndex = 14;
-            this.makeField.TextChanged += new System.EventHandler(this.makeField_TextChanged);
             // 
             // colorField
             // 
@@ -669,7 +666,6 @@
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(941, 336);
             this.dataGridView2.TabIndex = 23;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // order_id
             // 
@@ -704,7 +700,6 @@
             this.rentalOrderIdLabel.Size = new System.Drawing.Size(69, 20);
             this.rentalOrderIdLabel.TabIndex = 13;
             this.rentalOrderIdLabel.Text = "Order ID";
-            this.rentalOrderIdLabel.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // rentalOrderIdField
             // 
@@ -715,7 +710,6 @@
             this.rentalOrderIdField.Name = "rentalOrderIdField";
             this.rentalOrderIdField.Size = new System.Drawing.Size(119, 23);
             this.rentalOrderIdField.TabIndex = 14;
-            this.rentalOrderIdField.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // totalPriceField
             // 
@@ -726,7 +720,6 @@
             this.totalPriceField.Name = "totalPriceField";
             this.totalPriceField.Size = new System.Drawing.Size(119, 23);
             this.totalPriceField.TabIndex = 20;
-            this.totalPriceField.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // rentStartLabel
             // 
@@ -737,7 +730,6 @@
             this.rentStartLabel.Size = new System.Drawing.Size(117, 20);
             this.rentStartLabel.TabIndex = 15;
             this.rentStartLabel.Text = "Rent Start Date";
-            this.rentStartLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // totalPriceLabel
             // 
@@ -748,7 +740,6 @@
             this.totalPriceLabel.Size = new System.Drawing.Size(82, 20);
             this.totalPriceLabel.TabIndex = 19;
             this.totalPriceLabel.Text = "Total Price";
-            this.totalPriceLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // rentStartField
             // 
@@ -759,7 +750,6 @@
             this.rentStartField.Name = "rentStartField";
             this.rentStartField.Size = new System.Drawing.Size(119, 23);
             this.rentStartField.TabIndex = 16;
-            this.rentStartField.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // rentEndField
             // 
@@ -770,7 +760,6 @@
             this.rentEndField.Name = "rentEndField";
             this.rentEndField.Size = new System.Drawing.Size(119, 23);
             this.rentEndField.TabIndex = 18;
-            this.rentEndField.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // rentEndLabel
             // 
@@ -781,7 +770,6 @@
             this.rentEndLabel.Size = new System.Drawing.Size(109, 20);
             this.rentEndLabel.TabIndex = 17;
             this.rentEndLabel.Text = "Rent End Date";
-            this.rentEndLabel.Click += new System.EventHandler(this.label6_Click);
             // 
             // CarRentalSystem
             // 

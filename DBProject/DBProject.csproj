@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CARRENTALSYSTEM.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CARRENTALSYSTEM.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SQLite" Version="1.0.116" />
   </ItemGroup>
 

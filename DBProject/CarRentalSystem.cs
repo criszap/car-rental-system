@@ -11,12 +11,11 @@ using System.Data.SQLite;
 using System.Web;
 using System.Diagnostics;
 
-namespace DBProject
-{
-    public partial class CarRentalSystem : Form
-    {
+namespace DBProject {
+    public partial class CarRentalSystem : Form {
         //path of database
         string path = "CARRENTALSYSTEM.db";
+
         //database create debug
         string cs = @"URI=file:" + Application.StartupPath + "\\CARRENTALSYSTEM.db";
 
@@ -24,99 +23,110 @@ namespace DBProject
         SQLiteCommand cmd;
         SQLiteDataReader dr;
 
-        public CarRentalSystem()
-        {
+        public CarRentalSystem() {
             InitializeComponent();
         }
 
-        //show data in car table
-        private void data_show()
-        {
-            var con = new SQLiteConnection(cs);
-            con.Open();
-
-            string stm = "SELECT * FROM car_list";
-            var cmd = new SQLiteCommand(stm, con);
-            dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                car_list.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), dr.GetString(4), dr.GetInt32(5), dr.GetString(6));
-            }
-        }
-
-        private void Create_db()
-        {
-            if (!System.IO.File.Exists(path))
-            {
+        // creates DB & checks if created already
+        private void Create_db() {
+            if (!System.IO.File.Exists(path)) {
                 SQLiteConnection.CreateFile(path);
-                using (var sqlite = new SQLiteConnection(@"Data Source =" + path))
-                {
+
+                using (var sqlite = new SQLiteConnection(@"Data Source =" + path)) {
                     sqlite.Open();
+
+                    // CAR_LIST table creation
                     string sql = "CREATE TABLE CAR_LIST(" +
-                        "CAR_ID INT PRIMARY_KEY, " +
+                        "CAR_ID INTEGER, " +
                         "MAKE TEXT, " +
                         "MODEL TEXT, " +
-                        "YEAR INT, " +
+                        "YEAR INTEGER, " +
                         "COLOR TEXT, " +
-                        "DAILY_PRICE INT, " +
-                        "AVAILABLE TEXT);";
+                        "DAILY_PRICE INTEGER, " +
+                        "AVAILABLE TEXT, " +
+                        "PRIMARY KEY (CAR_ID)" +
+                      ");";
                     SQLiteCommand CARLISTcommand = new SQLiteCommand(sql, sqlite);
                     CARLISTcommand.ExecuteNonQuery();
 
+                    // CUSTOMERS table creation
                     sql = "CREATE TABLE CUSTOMERS(" +
-                        "CUST_ID INT PRIMARY KEY, " +
-                        "FIRST_NAME TEXT, " +
-                        "LAST_NAME TEXT, " +
-                        "EMAIL TEXT);" ;
+                            "CUST_ID INTEGER, " +
+                            "FIRST_NAME TEXT, " +
+                            "LAST_NAME TEXT, " +
+                            "EMAIL TEXT, " +
+                            "PRIMARY KEY (CUST_ID)" +
+                          ");" ;
                     SQLiteCommand CUSTOMERScommand = new SQLiteCommand(sql, sqlite);
                     CUSTOMERScommand.ExecuteNonQuery();
 
+                    // RENTED_CARS table creation
                     sql = "CREATE TABLE RENTED_CARS(" +
-                        "ORDER_ID INT PRIMARY KEY, " +
-                        "CAR_ID INT, " +
-                        "CUST_ID INT, " +
-                        "CITY TEXT, " +
-                        "STATE TEXT, " +
-                        "FOREIGN KEY (CAR_ID) REFERENCES CAR_LIST(CAR_ID), " +
-                        "FOREIGN KEY (CUST_ID) REFERENCES CUSTOMERS(CUST_ID));";
+                            "ORDER_ID INTEGER, " +
+                            "CAR_ID INTEGER, " +
+                            "CUST_ID INTEGER, " +
+                            "CITY TEXT, " +
+                            "STATE TEXT, " +
+                            "FOREIGN KEY (CAR_ID) REFERENCES CAR_LIST(CAR_ID), " +
+                            "FOREIGN KEY (CUST_ID) REFERENCES CUSTOMERS(CUST_ID), " +
+                            "PRIMARY KEY (ORDER_ID)" +
+                          ");";
                     SQLiteCommand RENTEDCARScommand = new SQLiteCommand(sql, sqlite);
                     RENTEDCARScommand.ExecuteNonQuery();
 
+                    // RENTAL_INFO table creation
                     sql = "CREATE TABLE RENTAL_INFO(" +
-                        "ORDER_ID INT PRIMARY KEY, " +
-                        "RENT_START TEXT, " +
-                        "RENT_END TEXT, " +
-                        "TOTAL_PRICE INT);";
+                            "ORDER_ID INTEGER, " +
+                            "RENT_START TEXT, " +
+                            "RENT_END TEXT, " +
+                            "TOTAL_PRICE INTEGER, " +
+                            "PRIMARY KEY (ORDER_ID)" +
+                          ");";
                     SQLiteCommand RENTALINFOcommand = new SQLiteCommand(sql, sqlite);
                     RENTALINFOcommand.ExecuteNonQuery();
                 }
             }
-            else
-            {
+            else {
                 Console.WriteLine("Database cannot be created");
                 return;
             }
         }
 
-        private void CarList_Load(object sender, EventArgs e)
-        {
+        // loads CAR_LIST table and shows data
+        private void CarList_Load(object sender, EventArgs e) {
             Create_db();
-            data_show();
+            showALLData("CAR_LIST");
         }
 
-        private void insert_car_list_Click_1(object sender, EventArgs e) {
+        //show data in car table
+        private void showALLData(string table) {
+            using (var con = new SQLiteConnection(cs)) {
+                con.Open();
+                string stm = "SELECT * FROM " + table;
+                var cmd = new SQLiteCommand(stm, con);
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read()) {
+                    car_list.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), 
+                        dr.GetString(4), dr.GetInt32(5), dr.GetString(6));
+                }
+            }
+        }
+
+        // handler for CAR_LIST insert button
+        private void insert_car_list_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
-                cmd.CommandText = "INSERT INTO CAR_LIST(CAR_ID, MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE) " +
-                   "VALUES(@CAR_ID, @MAKE, @MODEL, @YEAR, @COLOR, @DAILY_PRICE, @AVAILABLE)";
+            try {
+                cmd.CommandText = "INSERT INTO CAR_LIST(MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE) " +
+                   "VALUES(@MAKE, @MODEL, @YEAR, @COLOR, @DAILY_PRICE, @AVAILABLE)";
 
-                string CAR_ID = "5";
+                var max_id_cmd = new SQLiteCommand(con);
+                max_id_cmd.CommandText = "SELECT MAX(CAR_ID) FROM CAR_LIST";
+
                 string MAKE = makeField.Text;
                 string MODEL = modelField.Text;
                 string YEAR = yearField.Text;
@@ -124,16 +134,13 @@ namespace DBProject
                 string DAILY_PRICE = dailyPriceField.Text;
                 string AVAILABLE = "";
 
-                if (availableField.Checked)
-                {
+                if (availableField.Checked) {
                     AVAILABLE = "Y";
                 }
-                else
-                {
+                else {
                     AVAILABLE = "N";
                 }
 
-                cmd.Parameters.AddWithValue("@CAR_ID", CAR_ID);
                 cmd.Parameters.AddWithValue("@MAKE", MAKE);
                 cmd.Parameters.AddWithValue("@MODEL", MODEL);
                 cmd.Parameters.AddWithValue("@YEAR", YEAR);
@@ -141,162 +148,16 @@ namespace DBProject
                 cmd.Parameters.AddWithValue("@DAILY_PRICE", DAILY_PRICE);
                 cmd.Parameters.AddWithValue("@AVAILABLE", AVAILABLE);
 
-                car_list.ColumnCount = 7;
-                car_list.Columns[0].Name = "Car ID";
-                car_list.Columns[1].Name = "Make";
-                car_list.Columns[2].Name = "Model";
-                car_list.Columns[3].Name = "Year";
-                car_list.Columns[4].Name = "Color";
-                car_list.Columns[5].Name = "Daily Price";
-                car_list.Columns[6].Name = "Available";
-
-                string[] row = new string[] { CAR_ID, MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE };
-                car_list.Rows.Add(row);
 
                 cmd.ExecuteNonQuery();
+                car_list.Rows.Clear();
+                showALLData("CAR_LIST");
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
-        }
+        }   
 
-        private void insert_car_list_Click(object sender, EventArgs e) {
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Make_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Color_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DailyPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void carList_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Make_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void makeField_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        
     }
 }

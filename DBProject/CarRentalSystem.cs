@@ -282,7 +282,24 @@ namespace DBProject {
         }
 
         private void delete_customers_row_Click(object sender, EventArgs e) {
+            var con = new SQLiteConnection(cs);
+            con.Open();
 
+            var cmd = new SQLiteCommand(con);
+
+
+            try
+            {
+                cmd.CommandText = "DELETE FROM CUSTOMERS WHERE CUST_ID = " + customersTable.CurrentRow.Cells[0].FormattedValue.ToString();
+                cmd.ExecuteNonQuery();
+                customersTable.Rows.Clear();
+                showCustData("CUSTOMERS");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot insert data");
+                return;
+            }
         }
 
         //show data in rented_cars table
@@ -341,7 +358,24 @@ namespace DBProject {
         }
 
         private void delete_rented_cars_row_Click(object sender, EventArgs e) {
+            var con = new SQLiteConnection(cs);
+            con.Open();
 
+            var cmd = new SQLiteCommand(con);
+
+
+            try
+            {
+                cmd.CommandText = "DELETE FROM RENTED_CARS WHERE ORDER_ID = " + rentedCarsTable.CurrentRow.Cells[0].FormattedValue.ToString();
+                cmd.ExecuteNonQuery();
+                rentedCarsTable.Rows.Clear();
+                showRentedCarsData("RENTED_CARS");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot insert data");
+                return;
+            }
         }
 
         //show data in rental_info table
@@ -436,7 +470,24 @@ namespace DBProject {
         }
 
         private void delete_rental_info_row_Click(object sender, EventArgs e) {
+            var con = new SQLiteConnection(cs);
+            con.Open();
 
+            var cmd = new SQLiteCommand(con);
+
+
+            try
+            {
+                cmd.CommandText = "DELETE FROM RENTAL_INFO WHERE ORDER_ID = " + rentalInfoTable.CurrentRow.Cells[0].FormattedValue.ToString();
+                cmd.ExecuteNonQuery();
+                rentalInfoTable.Rows.Clear();
+                showRentalInfoData("RENTAL_INFO");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot insert data");
+                return;
+            }
         }
     }
 }

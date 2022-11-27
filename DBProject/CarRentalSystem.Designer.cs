@@ -104,6 +104,14 @@
             this.rentStartField = new System.Windows.Forms.TextBox();
             this.rentEndField = new System.Windows.Forms.TextBox();
             this.rentEndLabel = new System.Windows.Forms.Label();
+            this.predefSQL = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.predefSQL_1_Label = new System.Windows.Forms.Label();
+            this.predefSQL_3 = new System.Windows.Forms.Button();
+            this.predefSQL_2 = new System.Windows.Forms.Button();
+            this.predefSQL_1 = new System.Windows.Forms.Button();
+            this.predefSQL_Table = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
@@ -113,6 +121,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rentedCarsTable)).BeginInit();
             this.rentalInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentalInfoTable)).BeginInit();
+            this.predefSQL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.predefSQL_Table)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -131,6 +141,7 @@
             this.tabControl1.Controls.Add(this.customers);
             this.tabControl1.Controls.Add(this.rentedCars);
             this.tabControl1.Controls.Add(this.rentalInfo);
+            this.tabControl1.Controls.Add(this.predefSQL);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -855,6 +866,88 @@
             this.rentEndLabel.TabIndex = 17;
             this.rentEndLabel.Text = "Rent End Date";
             // 
+            // predefSQL
+            // 
+            this.predefSQL.Controls.Add(this.label3);
+            this.predefSQL.Controls.Add(this.label1);
+            this.predefSQL.Controls.Add(this.predefSQL_1_Label);
+            this.predefSQL.Controls.Add(this.predefSQL_3);
+            this.predefSQL.Controls.Add(this.predefSQL_2);
+            this.predefSQL.Controls.Add(this.predefSQL_1);
+            this.predefSQL.Controls.Add(this.predefSQL_Table);
+            this.predefSQL.Location = new System.Drawing.Point(4, 24);
+            this.predefSQL.Name = "predefSQL";
+            this.predefSQL.Size = new System.Drawing.Size(953, 510);
+            this.predefSQL.TabIndex = 4;
+            this.predefSQL.Text = "Predef\'s";
+            this.predefSQL.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(387, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 15);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "PREDEF_2";
+            // 
+            // predefSQL_1_Label
+            // 
+            this.predefSQL_1_Label.AutoSize = true;
+            this.predefSQL_1_Label.Location = new System.Drawing.Point(120, 32);
+            this.predefSQL_1_Label.Name = "predefSQL_1_Label";
+            this.predefSQL_1_Label.Size = new System.Drawing.Size(159, 15);
+            this.predefSQL_1_Label.TabIndex = 31;
+            this.predefSQL_1_Label.Text = "# of Cars in each (City, State)";
+            // 
+            // predefSQL_3
+            // 
+            this.predefSQL_3.Location = new System.Drawing.Point(640, 50);
+            this.predefSQL_3.Name = "predefSQL_3";
+            this.predefSQL_3.Size = new System.Drawing.Size(211, 42);
+            this.predefSQL_3.TabIndex = 29;
+            this.predefSQL_3.Text = "Fetch";
+            this.predefSQL_3.UseVisualStyleBackColor = true;
+            this.predefSQL_3.Click += new System.EventHandler(this.predefSQL_3_Click);
+            // 
+            // predefSQL_2
+            // 
+            this.predefSQL_2.Location = new System.Drawing.Point(358, 50);
+            this.predefSQL_2.Name = "predefSQL_2";
+            this.predefSQL_2.Size = new System.Drawing.Size(211, 42);
+            this.predefSQL_2.TabIndex = 28;
+            this.predefSQL_2.Text = "Fetch";
+            this.predefSQL_2.UseVisualStyleBackColor = true;
+            this.predefSQL_2.Click += new System.EventHandler(this.predefSQL_2_Click);
+            // 
+            // predefSQL_1
+            // 
+            this.predefSQL_1.Location = new System.Drawing.Point(93, 50);
+            this.predefSQL_1.Name = "predefSQL_1";
+            this.predefSQL_1.Size = new System.Drawing.Size(211, 42);
+            this.predefSQL_1.TabIndex = 27;
+            this.predefSQL_1.Text = "Fetch";
+            this.predefSQL_1.UseVisualStyleBackColor = true;
+            this.predefSQL_1.Click += new System.EventHandler(this.predefSQL_1_Click);
+            // 
+            // predefSQL_Table
+            // 
+            this.predefSQL_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.predefSQL_Table.Location = new System.Drawing.Point(6, 124);
+            this.predefSQL_Table.Name = "predefSQL_Table";
+            this.predefSQL_Table.RowTemplate.Height = 25;
+            this.predefSQL_Table.Size = new System.Drawing.Size(941, 336);
+            this.predefSQL_Table.TabIndex = 30;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(671, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 15);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "PREDEF_3";
+            // 
             // CarRentalSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -879,6 +972,9 @@
             this.rentalInfo.ResumeLayout(false);
             this.rentalInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentalInfoTable)).EndInit();
+            this.predefSQL.ResumeLayout(false);
+            this.predefSQL.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.predefSQL_Table)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -960,5 +1056,13 @@
         private Button customers_edit;
         private Button rented_cars_edit;
         private Button rental_info_edit;
+        private TabPage predefSQL;
+        private Button predefSQL_3;
+        private Button predefSQL_2;
+        private Button predefSQL_1;
+        private DataGridView predefSQL_Table;
+        private Label predefSQL_1_Label;
+        private Label label1;
+        private Label label3;
     }
 }

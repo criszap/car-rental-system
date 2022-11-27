@@ -12,6 +12,8 @@ using System.Web;
 using System.Diagnostics;
 using System.Globalization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace DBProject {
     public partial class CarRentalSystem : Form {
@@ -217,77 +219,65 @@ namespace DBProject {
             }
         }
 
-        private void delete_car_list_row_Click(object sender, EventArgs e)
-        {
+        private void delete_car_list_row_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
 
-            try
-            {
+            try {
                 cmd.CommandText = "DELETE FROM CAR_LIST WHERE CAR_ID = " + car_list.CurrentRow.Cells[0].FormattedValue.ToString();
                 cmd.ExecuteNonQuery();
                 car_list.Rows.Clear();
                 showCarListData("CAR_LIST");
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
         }
 
-        private void car_list_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void car_list_CellClick(object sender, DataGridViewCellEventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 makeField.Text = car_list.CurrentRow.Cells[1].FormattedValue.ToString();
                 modelField.Text = car_list.CurrentRow.Cells[2].FormattedValue.ToString();
                 yearField.Text = car_list.CurrentRow.Cells[3].FormattedValue.ToString();
                 colorField.Text = car_list.CurrentRow.Cells[4].FormattedValue.ToString();
                 dailyPriceField.Text = car_list.CurrentRow.Cells[5].FormattedValue.ToString();
 
-                if (car_list.CurrentRow.Cells[6].FormattedValue.ToString() == "Y")
-                {
+                if (car_list.CurrentRow.Cells[6].FormattedValue.ToString() == "Y") {
                     availableField.Checked = true;
                 }
-                else
-                {
+                else {
                     availableField.Checked = false;
                 }
             }
 
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot read cell");
                 return;
             }
         }
 
-        private void car_list_edit_Click(object sender, EventArgs e)
-        {
+        private void car_list_edit_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 string avail_field = "";
 
-                if (availableField.Checked)
-                {
+                if (availableField.Checked) {
                     avail_field = "Y";
                 }
-                else
-                {
+                else {
                     avail_field = "N";
                 }
 
@@ -305,8 +295,7 @@ namespace DBProject {
                 showCarListData("CAR_LIST");
             }
 
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Could not update");
             }
         }
@@ -314,17 +303,14 @@ namespace DBProject {
         /*-------------------------------------------------------------
          ------------------- LOADS CUSTOMERS TABLE --------------------
          ------------------------------------------------------------*/
-        private void showCustData(string table)
-        {
-            using (var con = new SQLiteConnection(cs))
-            {
+        private void showCustData(string table) {
+            using (var con = new SQLiteConnection(cs)) {
                 con.Open();
                 string stm = "SELECT * FROM " + table;
                 var cmd = new SQLiteCommand(stm, con);
                 dr = cmd.ExecuteReader();
 
-                while (dr.Read())
-                {
+                while (dr.Read()) {
                     customersTable.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3));
                 }
             }
@@ -337,15 +323,13 @@ namespace DBProject {
          ------------------------- CELL_CLICK -------------------------
          ---------------------------- EDIT ----------------------------
          ------------------------------------------------------------*/
-        private void insert_cust_list_Click(object sender, EventArgs e)
-        {
+        private void insert_cust_list_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 cmd.CommandText = "INSERT INTO CUSTOMERS(FIRST_NAME, LAST_NAME, EMAIL) " +
                    "VALUES(@FIRST_NAME, @LAST_NAME, @EMAIL)";
 
@@ -365,8 +349,7 @@ namespace DBProject {
                 customersTable.Rows.Clear();
                 showCustData("CUSTOMERS");
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
@@ -379,50 +362,43 @@ namespace DBProject {
             var cmd = new SQLiteCommand(con);
 
 
-            try
-            {
+            try {
                 cmd.CommandText = "DELETE FROM CUSTOMERS WHERE CUST_ID = " + customersTable.CurrentRow.Cells[0].FormattedValue.ToString();
                 cmd.ExecuteNonQuery();
                 customersTable.Rows.Clear();
                 showCustData("CUSTOMERS");
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
         }
 
-        private void customersTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void customersTable_CellClick(object sender, DataGridViewCellEventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 customerFNField.Text = customersTable.CurrentRow.Cells[1].FormattedValue.ToString();
                 customerLNField.Text = customersTable.CurrentRow.Cells[2].FormattedValue.ToString();
                 customerEmailField.Text = customersTable.CurrentRow.Cells[3].FormattedValue.ToString();
             }
 
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot read cell");
                 return;
             }
         }
 
-        private void customers_edit_Click(object sender, EventArgs e)
-        {
+        private void customers_edit_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
 
                 cmd.CommandText = "UPDATE CUSTOMERS SET " +
                     "FIRST_NAME = '" + customerFNField.Text + "', " +
@@ -435,8 +411,7 @@ namespace DBProject {
                 showCustData("CUSTOMERS");
             }
 
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Could not update");
             }
         }
@@ -444,17 +419,14 @@ namespace DBProject {
         /*-------------------------------------------------------------
          ------------------ LOADS RENTED_CARS TABLE -------------------
          ------------------------------------------------------------*/
-        private void showRentedCarsData(string table)
-        {
-            using (var con = new SQLiteConnection(cs))
-            {
+        private void showRentedCarsData(string table) {
+            using (var con = new SQLiteConnection(cs)) {
                 con.Open();
                 string stm = "SELECT * FROM " + table;
                 var cmd = new SQLiteCommand(stm, con);
                 dr = cmd.ExecuteReader();
 
-                while (dr.Read())
-                {
+                while (dr.Read()) {
                     rentedCarsTable.Rows.Insert(0, dr.GetInt32(0), dr.GetInt32(1), dr.GetInt32(2), dr.GetString(3), dr.GetString(4));
                 }
             }
@@ -467,15 +439,13 @@ namespace DBProject {
          ------------------------- CELL_CLICK -------------------------
          ---------------------------- EDIT ----------------------------
          ------------------------------------------------------------*/
-        private void insert_rented_cars_Click(object sender, EventArgs e)
-        {
+        private void insert_rented_cars_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 cmd.CommandText = "INSERT INTO RENTED_CARS(CAR_ID, CUST_ID, CITY, STATE) " +
                    "VALUES(@CAR_ID, @CUST_ID, @CITY, @STATE)";
 
@@ -497,8 +467,7 @@ namespace DBProject {
                 rentedCarsTable.Rows.Clear();
                 showRentedCarsData("RENTED_CARS");
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
@@ -511,52 +480,44 @@ namespace DBProject {
             var cmd = new SQLiteCommand(con);
 
 
-            try
-            {
+            try {
                 cmd.CommandText = "DELETE FROM RENTED_CARS WHERE ORDER_ID = " + rentedCarsTable.CurrentRow.Cells[0].FormattedValue.ToString();
                 cmd.ExecuteNonQuery();
                 rentedCarsTable.Rows.Clear();
                 showRentedCarsData("RENTED_CARS");
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
         }
 
-        private void rentedCarsTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void rentedCarsTable_CellClick(object sender, DataGridViewCellEventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 rcCARIDField.Text = rentedCarsTable.CurrentRow.Cells[1].FormattedValue.ToString();
                 rcCUSTIDField.Text = rentedCarsTable.CurrentRow.Cells[2].FormattedValue.ToString();
                 rcCITYField.Text = rentedCarsTable.CurrentRow.Cells[3].FormattedValue.ToString();
                 rcSTATEField.Text = rentedCarsTable.CurrentRow.Cells[4].FormattedValue.ToString();
             }
 
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot read cell");
                 return;
             }
         }
 
-        private void rented_cars_edit_Click(object sender, EventArgs e)
-        {
+        private void rented_cars_edit_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
-
+            try {
                 cmd.CommandText = "UPDATE RENTED_CARS SET " +
                     "CAR_ID = " + rcCARIDField.Text + ", " +
                     "CUST_ID = " + rcCUSTIDField.Text + ", " +
@@ -569,8 +530,7 @@ namespace DBProject {
                 showRentedCarsData("RENTED_CARS");
             }
 
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Could not update");
             }
         }
@@ -578,17 +538,14 @@ namespace DBProject {
         /*-------------------------------------------------------------
          ------------------ LOADS RENTAL_INFO TABLE -------------------
          ------------------------------------------------------------*/
-        private void showRentalInfoData(string table)
-        {
-            using (var con = new SQLiteConnection(cs))
-            {
+        private void showRentalInfoData(string table) {
+            using (var con = new SQLiteConnection(cs)) {
                 con.Open();
                 string stm = "SELECT * FROM " + table;
                 var cmd = new SQLiteCommand(stm, con);
                 dr = cmd.ExecuteReader();
 
-                while (dr.Read())
-                {
+                while (dr.Read()) {
                     rentalInfoTable.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), dr.GetString(4));
                 }
             }
@@ -603,8 +560,7 @@ namespace DBProject {
          ------------------------- + HELPERS --------------------------
          ------------------------------------------------------------*/
         private string getTotalPrice(string orderID, string RENT_START, string RENT_END) {
-            using (var con = new SQLiteConnection(cs))
-            {
+            using (var con = new SQLiteConnection(cs)) {
                 string daily_price = "";
 
                 con.Open();
@@ -629,15 +585,13 @@ namespace DBProject {
         }
 
         // handler for rental_info insert button
-        private void insert_rental_info_Click(object sender, EventArgs e)
-        {
+        private void insert_rental_info_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 cmd.CommandText = "INSERT INTO RENTAL_INFO(ORDER_ID, RENT_START, RENT_END, TOTAL_PRICE, TURNED_IN) " +
                    "VALUES(@ORDER_ID, @RENT_START, @RENT_END, @TOTAL_PRICE, @TURNED_IN)";
 
@@ -668,8 +622,7 @@ namespace DBProject {
                 rentalInfoTable.Rows.Clear();
                 showRentalInfoData("RENTAL_INFO");
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
@@ -682,67 +635,56 @@ namespace DBProject {
             var cmd = new SQLiteCommand(con);
 
 
-            try
-            {
+            try {
                 cmd.CommandText = "DELETE FROM RENTAL_INFO WHERE ORDER_ID = " + rentalInfoTable.CurrentRow.Cells[0].FormattedValue.ToString();
                 cmd.ExecuteNonQuery();
                 rentalInfoTable.Rows.Clear();
                 showRentalInfoData("RENTAL_INFO");
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
         }
 
-        private void rentalInfoTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void rentalInfoTable_CellClick(object sender, DataGridViewCellEventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 rentalOrderIdField.Text = rentalInfoTable.CurrentRow.Cells[0].FormattedValue.ToString();
                 rentStartField.Text = rentalInfoTable.CurrentRow.Cells[1].FormattedValue.ToString();
                 rentEndField.Text = rentalInfoTable.CurrentRow.Cells[2].FormattedValue.ToString();
 
-                if (rentalInfoTable.CurrentRow.Cells[4].FormattedValue.ToString() == "Y")
-                {
+                if (rentalInfoTable.CurrentRow.Cells[4].FormattedValue.ToString() == "Y") {
                     turnedInField.Checked = true;
                 }
-                else
-                {
+                else {
                     turnedInField.Checked = false;
                 }
             }
 
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Cannot read cell");
                 return;
             }
         }
 
-        private void rental_info_edit_Click(object sender, EventArgs e)
-        {
+        private void rental_info_edit_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
 
             var cmd = new SQLiteCommand(con);
 
-            try
-            {
+            try {
                 string avail_field = "";
 
-                if (turnedInField.Checked)
-                {
+                if (turnedInField.Checked) {
                     avail_field = "Y";
                 }
-                else
-                {
+                else {
                     avail_field = "N";
                 }
 
@@ -759,11 +701,98 @@ namespace DBProject {
                 showRentalInfoData("RENTAL_INFO");
             }
 
-            catch (Exception)
-            {
+            catch (Exception) {
                 Console.WriteLine("Could not update");
             }
         }
 
+
+        /*-------------------------------------------------------------
+         --------------------- PREDEF SQL HANDLERS --------------------
+         ----------------------------- 1 ------------------------------
+         ----------------------------- 2 ------------------------------
+         ----------------------------- 3 ------------------------------
+         ------------------------------------------------------------*/
+        private void predefSQL_1_Click(object sender, EventArgs e) {
+            using (var con = new SQLiteConnection(cs)) {
+                con.Open();
+                string stm =
+                        "SELECT COUNT(CAR_ID) AS NUM_OF_CARS, CITY, STATE FROM RENTED_CARS " +
+                        "GROUP BY CITY, STATE";
+
+                var cmd = new SQLiteCommand(stm, con);
+                dr = cmd.ExecuteReader();
+
+                predefSQL_Table.Columns.Clear();
+                predefSQL_Table.Rows.Clear();
+
+                for (var i = 0; i < dr.FieldCount; i++) {
+                    predefSQL_Table.Columns.Add(new DataGridViewTextBoxColumn {
+                        HeaderText = dr.GetName(i),
+                        Width = 300
+                    });
+                }
+
+                while (dr.Read()) {
+                    predefSQL_Table.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2));
+                }
+            }
+        }
+
+        private void predefSQL_2_Click(object sender, EventArgs e) {
+            using (var con = new SQLiteConnection(cs)) {
+                con.Open();
+                string stm =
+                        "SELECT * FROM CAR_LIST";
+
+                var cmd = new SQLiteCommand(stm, con);
+                dr = cmd.ExecuteReader();
+
+                predefSQL_Table.Columns.Clear();
+                predefSQL_Table.Rows.Clear();
+
+                for (var i = 0; i < dr.FieldCount; i++) {
+                    Console.WriteLine(dr.GetName(i));
+
+                    predefSQL_Table.Columns.Add(new DataGridViewTextBoxColumn {
+                        HeaderText = dr.GetName(i),
+                        Width = 129
+                    });
+                }
+
+                while (dr.Read()) {
+                    predefSQL_Table.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), 
+                        dr.GetString(4), dr.GetInt32(5), dr.GetString(6));
+                }
+            }
+        }
+
+        private void predefSQL_3_Click(object sender, EventArgs e) {
+            using (var con = new SQLiteConnection(cs)) {
+                con.Open();
+                string stm =
+                        "SELECT * FROM CAR_LIST";
+
+                var cmd = new SQLiteCommand(stm, con);
+                dr = cmd.ExecuteReader();
+
+                predefSQL_Table.Columns.Clear();
+                predefSQL_Table.Rows.Clear();
+
+                for (var i = 0; i < dr.FieldCount; i++) {
+                    Console.WriteLine(dr.GetName(i));
+
+                    predefSQL_Table.Columns.Add(new DataGridViewTextBoxColumn {
+                        HeaderText = dr.GetName(i),
+                        Width = 129
+                    });
+                }
+
+                while (dr.Read()) {
+                    predefSQL_Table.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), 
+                        dr.GetString(4), dr.GetInt32(5), dr.GetString(6));
+                }
+            }
+        }
     }
 }

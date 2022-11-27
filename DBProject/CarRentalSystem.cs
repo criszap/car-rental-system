@@ -137,7 +137,9 @@ namespace DBProject {
             }
         }
 
-        // loads CAR_LIST table and shows data
+         /*------------------------------------------------------------
+         --------------- LOADS DATA FOR ALL PAGES ---------------------
+         ------------------------------------------------------------*/
         private void CarList_Load(object sender, EventArgs e) {
             Create_db();
             showCarListData("CAR_LIST");
@@ -146,7 +148,9 @@ namespace DBProject {
             showRentalInfoData("RENTAL_INFO");
         }
 
-        //show data in car_list table
+        /*-------------------------------------------------------------
+         ------------------- LOADS CAR_LIST TABLE ---------------------
+         ------------------------------------------------------------*/
         private void showCarListData(string table) {
             using (var con = new SQLiteConnection(cs)) {
                 con.Open();
@@ -161,7 +165,13 @@ namespace DBProject {
             }
         }
 
-        // handler for CAR_LIST insert button
+         /*------------------------------------------------------------
+         --------------------- CAR_LIST HANDLERS ----------------------
+         --------------------------- INSERT ---------------------------
+         --------------------------- DELETE ---------------------------
+         ------------------------- CELL_CLICK -------------------------
+         ---------------------------- EDIT ----------------------------
+         ------------------------------------------------------------*/
         private void insert_car_list_Click(object sender, EventArgs e) {
             var con = new SQLiteConnection(cs);
             con.Open();
@@ -301,7 +311,9 @@ namespace DBProject {
             }
         }
 
-        //show data in car_list table
+        /*-------------------------------------------------------------
+         ------------------- LOADS CUSTOMERS TABLE --------------------
+         ------------------------------------------------------------*/
         private void showCustData(string table)
         {
             using (var con = new SQLiteConnection(cs))
@@ -318,7 +330,13 @@ namespace DBProject {
             }
         }
 
-        // handler for CUSTOMERS insert button
+        /*-------------------------------------------------------------
+         --------------------- CUSTOMERS HANDLERS ---------------------
+         --------------------------- INSERT ---------------------------
+         --------------------------- DELETE ---------------------------
+         ------------------------- CELL_CLICK -------------------------
+         ---------------------------- EDIT ----------------------------
+         ------------------------------------------------------------*/
         private void insert_cust_list_Click(object sender, EventArgs e)
         {
             var con = new SQLiteConnection(cs);
@@ -375,7 +393,9 @@ namespace DBProject {
             }
         }
 
-        //show data in rented_cars table
+        /*-------------------------------------------------------------
+         ------------------ LOADS RENTED_CARS TABLE -------------------
+         ------------------------------------------------------------*/
         private void showRentedCarsData(string table)
         {
             using (var con = new SQLiteConnection(cs))
@@ -392,7 +412,13 @@ namespace DBProject {
             }
         }
 
-        // handler for rented_cars insert button
+        /*-------------------------------------------------------------
+         --------------------- RENTED_CARS HANDLERS -------------------
+         --------------------------- INSERT ---------------------------
+         --------------------------- DELETE ---------------------------
+         ------------------------- CELL_CLICK -------------------------
+         ---------------------------- EDIT ----------------------------
+         ------------------------------------------------------------*/
         private void insert_rented_cars_Click(object sender, EventArgs e)
         {
             var con = new SQLiteConnection(cs);
@@ -451,7 +477,9 @@ namespace DBProject {
             }
         }
 
-        //show data in rental_info table
+        /*-------------------------------------------------------------
+         ------------------ LOADS RENTAL_INFO TABLE -------------------
+         ------------------------------------------------------------*/
         private void showRentalInfoData(string table)
         {
             using (var con = new SQLiteConnection(cs))
@@ -468,7 +496,14 @@ namespace DBProject {
             }
         }
 
-        // handler for getting the total price of a rented car
+        /*-------------------------------------------------------------
+         --------------------- RENTAL_INFO HANDLERS -------------------
+         --------------------------- INSERT ---------------------------
+         --------------------------- DELETE ---------------------------
+         ------------------------- CELL_CLICK -------------------------
+         ---------------------------- EDIT ----------------------------
+         ------------------------- + HELPERS --------------------------
+         ------------------------------------------------------------*/
         private string getTotalPrice(string orderID, string RENT_START, string RENT_END) {
             using (var con = new SQLiteConnection(cs))
             {

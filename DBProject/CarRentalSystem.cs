@@ -206,6 +206,28 @@ namespace DBProject {
             }
         }
 
+        private void delete_car_list_row_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+
+            try
+            {
+                cmd.CommandText = "DELETE FROM CAR_LIST WHERE CAR_ID = " + car_list.CurrentRow.Cells[0].FormattedValue.ToString();
+                cmd.ExecuteNonQuery();
+                car_list.Rows.Clear();
+                showCarListData("CAR_LIST");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot insert data");
+                return;
+            }
+        }
+
         //show data in car_list table
         private void showCustData(string table)
         {
@@ -404,5 +426,6 @@ namespace DBProject {
                 return;
             }
         }
+
     }
 }

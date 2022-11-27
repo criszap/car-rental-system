@@ -393,6 +393,54 @@ namespace DBProject {
             }
         }
 
+        private void customersTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                customerFNField.Text = customersTable.CurrentRow.Cells[1].FormattedValue.ToString();
+                customerLNField.Text = customersTable.CurrentRow.Cells[2].FormattedValue.ToString();
+                customerEmailField.Text = customersTable.CurrentRow.Cells[3].FormattedValue.ToString();
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot read cell");
+                return;
+            }
+        }
+
+        private void customers_edit_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+
+                cmd.CommandText = "UPDATE CUSTOMERS SET " +
+                    "FIRST_NAME = '" + customerFNField.Text + "', " +
+                    "LAST_NAME = '" + customerLNField.Text + "', " +
+                    "EMAIL = '" + customerEmailField.Text + "' " +
+                    "WHERE CUST_ID = " + customersTable.CurrentRow.Cells[0].FormattedValue.ToString();
+
+                cmd.ExecuteNonQuery();
+                customersTable.Rows.Clear();
+                showCustData("CUSTOMERS");
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("Could not update");
+            }
+        }
+
         /*-------------------------------------------------------------
          ------------------ LOADS RENTED_CARS TABLE -------------------
          ------------------------------------------------------------*/
@@ -474,6 +522,56 @@ namespace DBProject {
             {
                 Console.WriteLine("Cannot insert data");
                 return;
+            }
+        }
+
+        private void rentedCarsTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                rcCARIDField.Text = rentedCarsTable.CurrentRow.Cells[1].FormattedValue.ToString();
+                rcCUSTIDField.Text = rentedCarsTable.CurrentRow.Cells[2].FormattedValue.ToString();
+                rcCITYField.Text = rentedCarsTable.CurrentRow.Cells[3].FormattedValue.ToString();
+                rcSTATEField.Text = rentedCarsTable.CurrentRow.Cells[4].FormattedValue.ToString();
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot read cell");
+                return;
+            }
+        }
+
+        private void rented_cars_edit_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+
+                cmd.CommandText = "UPDATE RENTED_CARS SET " +
+                    "CAR_ID = " + rcCARIDField.Text + ", " +
+                    "CUST_ID = " + rcCUSTIDField.Text + ", " +
+                    "CITY = '" + rcCITYField.Text + "', " +
+                    "STATE = '" + rcSTATEField.Text + "' " +
+                    "WHERE ORDER_ID = " + rentedCarsTable.CurrentRow.Cells[0].FormattedValue.ToString();
+
+                cmd.ExecuteNonQuery();
+                rentedCarsTable.Rows.Clear();
+                showRentedCarsData("RENTED_CARS");
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("Could not update");
             }
         }
 
@@ -595,6 +693,75 @@ namespace DBProject {
             {
                 Console.WriteLine("Cannot insert data");
                 return;
+            }
+        }
+
+        private void rentalInfoTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                rentalOrderIdField.Text = rentalInfoTable.CurrentRow.Cells[0].FormattedValue.ToString();
+                rentStartField.Text = rentalInfoTable.CurrentRow.Cells[1].FormattedValue.ToString();
+                rentEndField.Text = rentalInfoTable.CurrentRow.Cells[2].FormattedValue.ToString();
+
+                if (rentalInfoTable.CurrentRow.Cells[4].FormattedValue.ToString() == "Y")
+                {
+                    turnedInField.Checked = true;
+                }
+                else
+                {
+                    turnedInField.Checked = false;
+                }
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot read cell");
+                return;
+            }
+        }
+
+        private void rental_info_edit_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                string avail_field = "";
+
+                if (turnedInField.Checked)
+                {
+                    avail_field = "Y";
+                }
+                else
+                {
+                    avail_field = "N";
+                }
+
+                cmd.CommandText = "UPDATE RENTAL_INFO SET " +
+                    "ORDER_ID = " + rentalOrderIdField.Text + ", " +
+                    "RENT_START = '" + rentStartField.Text + "', " +
+                    "RENT_END = '" + rentEndField.Text + "', " +
+                    "TOTAL_PRICE = " + getTotalPrice(rentalOrderIdField.Text, rentStartField.Text, rentEndField.Text) + ", " +
+                    "TURNED_IN = '" + avail_field + "' " +
+                    "WHERE ORDER_ID = " + rentalInfoTable.CurrentRow.Cells[0].FormattedValue.ToString();
+
+                cmd.ExecuteNonQuery();
+                rentalInfoTable.Rows.Clear();
+                showRentalInfoData("RENTAL_INFO");
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("Could not update");
             }
         }
 

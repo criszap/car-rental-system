@@ -55,6 +55,7 @@
             this.yearField = new System.Windows.Forms.TextBox();
             this.yearLabel = new System.Windows.Forms.Label();
             this.customers = new System.Windows.Forms.TabPage();
+            this.customers_edit = new System.Windows.Forms.Button();
             this.delete_customers_row = new System.Windows.Forms.Button();
             this.insert_cust_list = new System.Windows.Forms.Button();
             this.customersTable = new System.Windows.Forms.DataGridView();
@@ -69,6 +70,7 @@
             this.customerLNField = new System.Windows.Forms.TextBox();
             this.customerLNLabel = new System.Windows.Forms.Label();
             this.rentedCars = new System.Windows.Forms.TabPage();
+            this.rented_cars_edit = new System.Windows.Forms.Button();
             this.delete_rented_cars_row = new System.Windows.Forms.Button();
             this.insert_rented_cars = new System.Windows.Forms.Button();
             this.rentedCarsTable = new System.Windows.Forms.DataGridView();
@@ -86,6 +88,7 @@
             this.rcCUSTIDField = new System.Windows.Forms.TextBox();
             this.rcCUSTIDLabel = new System.Windows.Forms.Label();
             this.rentalInfo = new System.Windows.Forms.TabPage();
+            this.rental_info_edit = new System.Windows.Forms.Button();
             this.delete_rental_info_row = new System.Windows.Forms.Button();
             this.turnedInField = new System.Windows.Forms.CheckBox();
             this.insert_rental_info = new System.Windows.Forms.Button();
@@ -165,7 +168,7 @@
             this.car_list_edit.Name = "car_list_edit";
             this.car_list_edit.Size = new System.Drawing.Size(75, 23);
             this.car_list_edit.TabIndex = 27;
-            this.car_list_edit.Text = "Edit";
+            this.car_list_edit.Text = "Update";
             this.car_list_edit.UseVisualStyleBackColor = true;
             this.car_list_edit.Click += new System.EventHandler(this.car_list_edit_Click);
             // 
@@ -362,6 +365,7 @@
             // 
             // customers
             // 
+            this.customers.Controls.Add(this.customers_edit);
             this.customers.Controls.Add(this.delete_customers_row);
             this.customers.Controls.Add(this.insert_cust_list);
             this.customers.Controls.Add(this.customersTable);
@@ -378,6 +382,16 @@
             this.customers.TabIndex = 1;
             this.customers.Text = "Customers";
             this.customers.UseVisualStyleBackColor = true;
+            // 
+            // customers_edit
+            // 
+            this.customers_edit.Location = new System.Drawing.Point(872, 481);
+            this.customers_edit.Name = "customers_edit";
+            this.customers_edit.Size = new System.Drawing.Size(75, 23);
+            this.customers_edit.TabIndex = 28;
+            this.customers_edit.Text = "Update";
+            this.customers_edit.UseVisualStyleBackColor = true;
+            this.customers_edit.Click += new System.EventHandler(this.customers_edit_Click);
             // 
             // delete_customers_row
             // 
@@ -412,6 +426,7 @@
             this.customersTable.RowTemplate.Height = 25;
             this.customersTable.Size = new System.Drawing.Size(941, 336);
             this.customersTable.TabIndex = 23;
+            this.customersTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersTable_CellClick);
             // 
             // CUST_ID
             // 
@@ -499,6 +514,7 @@
             // 
             // rentedCars
             // 
+            this.rentedCars.Controls.Add(this.rented_cars_edit);
             this.rentedCars.Controls.Add(this.delete_rented_cars_row);
             this.rentedCars.Controls.Add(this.insert_rented_cars);
             this.rentedCars.Controls.Add(this.rentedCarsTable);
@@ -516,6 +532,16 @@
             this.rentedCars.TabIndex = 2;
             this.rentedCars.Text = "Rented Cars";
             this.rentedCars.UseVisualStyleBackColor = true;
+            // 
+            // rented_cars_edit
+            // 
+            this.rented_cars_edit.Location = new System.Drawing.Point(872, 481);
+            this.rented_cars_edit.Name = "rented_cars_edit";
+            this.rented_cars_edit.Size = new System.Drawing.Size(75, 23);
+            this.rented_cars_edit.TabIndex = 29;
+            this.rented_cars_edit.Text = "Update";
+            this.rented_cars_edit.UseVisualStyleBackColor = true;
+            this.rented_cars_edit.Click += new System.EventHandler(this.rented_cars_edit_Click);
             // 
             // delete_rented_cars_row
             // 
@@ -551,6 +577,7 @@
             this.rentedCarsTable.RowTemplate.Height = 25;
             this.rentedCarsTable.Size = new System.Drawing.Size(941, 336);
             this.rentedCarsTable.TabIndex = 23;
+            this.rentedCarsTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rentedCarsTable_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -664,6 +691,7 @@
             // 
             // rentalInfo
             // 
+            this.rentalInfo.Controls.Add(this.rental_info_edit);
             this.rentalInfo.Controls.Add(this.delete_rental_info_row);
             this.rentalInfo.Controls.Add(this.turnedInField);
             this.rentalInfo.Controls.Add(this.insert_rental_info);
@@ -680,6 +708,16 @@
             this.rentalInfo.TabIndex = 3;
             this.rentalInfo.Text = "Rental Info";
             this.rentalInfo.UseVisualStyleBackColor = true;
+            // 
+            // rental_info_edit
+            // 
+            this.rental_info_edit.Location = new System.Drawing.Point(872, 481);
+            this.rental_info_edit.Name = "rental_info_edit";
+            this.rental_info_edit.Size = new System.Drawing.Size(75, 23);
+            this.rental_info_edit.TabIndex = 30;
+            this.rental_info_edit.Text = "Update";
+            this.rental_info_edit.UseVisualStyleBackColor = true;
+            this.rental_info_edit.Click += new System.EventHandler(this.rental_info_edit_Click);
             // 
             // delete_rental_info_row
             // 
@@ -725,6 +763,7 @@
             this.rentalInfoTable.RowTemplate.Height = 25;
             this.rentalInfoTable.Size = new System.Drawing.Size(941, 336);
             this.rentalInfoTable.TabIndex = 23;
+            this.rentalInfoTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rentalInfoTable_CellClick);
             // 
             // order_id
             // 
@@ -918,5 +957,8 @@
         private Button delete_rented_cars_row;
         private Button delete_rental_info_row;
         private Button car_list_edit;
+        private Button customers_edit;
+        private Button rented_cars_edit;
+        private Button rental_info_edit;
     }
 }

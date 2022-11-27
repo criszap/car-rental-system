@@ -11,6 +11,7 @@ using System.Data.SQLite;
 using System.Web;
 using System.Diagnostics;
 using System.Globalization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DBProject {
     public partial class CarRentalSystem : Form {
@@ -225,6 +226,78 @@ namespace DBProject {
             {
                 Console.WriteLine("Cannot insert data");
                 return;
+            }
+        }
+
+        private void car_list_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                makeField.Text = car_list.CurrentRow.Cells[1].FormattedValue.ToString();
+                modelField.Text = car_list.CurrentRow.Cells[2].FormattedValue.ToString();
+                yearField.Text = car_list.CurrentRow.Cells[3].FormattedValue.ToString();
+                colorField.Text = car_list.CurrentRow.Cells[4].FormattedValue.ToString();
+                dailyPriceField.Text = car_list.CurrentRow.Cells[5].FormattedValue.ToString();
+
+                if (car_list.CurrentRow.Cells[6].FormattedValue.ToString() == "Y")
+                {
+                    availableField.Checked = true;
+                }
+                else
+                {
+                    availableField.Checked = false;
+                }
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot read cell");
+                return;
+            }
+        }
+
+        private void car_list_edit_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+
+            var cmd = new SQLiteCommand(con);
+
+            try
+            {
+                string avail_field = "";
+
+                if (availableField.Checked)
+                {
+                    avail_field = "Y";
+                }
+                else
+                {
+                    avail_field = "N";
+                }
+
+                cmd.CommandText = "UPDATE CAR_LIST SET " +
+                    "MAKE = '" + makeField.Text + "', " +
+                    "MODEL = '" + modelField.Text + "', " +
+                    "YEAR = " + yearField.Text + ", " + 
+                    "COLOR = '" + colorField.Text + "', " +
+                    "DAILY_PRICE = " + dailyPriceField.Text + ", " +
+                    "AVAILABLE = '" + avail_field + "' " +
+                    "WHERE CAR_ID = " + car_list.CurrentRow.Cells[0].FormattedValue.ToString();
+
+                cmd.ExecuteNonQuery();
+                car_list.Rows.Clear();
+                showCarListData("CAR_LIST");
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("Could not update");
             }
         }
 
@@ -489,5 +562,6 @@ namespace DBProject {
                 return;
             }
         }
+
     }
 }

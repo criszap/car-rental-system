@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.carList = new System.Windows.Forms.TabPage();
+            this.car_list_edit = new System.Windows.Forms.Button();
             this.delete_car_list_row = new System.Windows.Forms.Button();
             this.availableField = new System.Windows.Forms.CheckBox();
             this.insert_car_list = new System.Windows.Forms.Button();
@@ -135,6 +136,7 @@
             // 
             // carList
             // 
+            this.carList.Controls.Add(this.car_list_edit);
             this.carList.Controls.Add(this.delete_car_list_row);
             this.carList.Controls.Add(this.availableField);
             this.carList.Controls.Add(this.insert_car_list);
@@ -156,6 +158,16 @@
             this.carList.TabIndex = 0;
             this.carList.Text = "Car List";
             this.carList.UseVisualStyleBackColor = true;
+            // 
+            // car_list_edit
+            // 
+            this.car_list_edit.Location = new System.Drawing.Point(872, 481);
+            this.car_list_edit.Name = "car_list_edit";
+            this.car_list_edit.Size = new System.Drawing.Size(75, 23);
+            this.car_list_edit.TabIndex = 27;
+            this.car_list_edit.Text = "Edit";
+            this.car_list_edit.UseVisualStyleBackColor = true;
+            this.car_list_edit.Click += new System.EventHandler(this.car_list_edit_Click);
             // 
             // delete_car_list_row
             // 
@@ -204,6 +216,7 @@
             this.car_list.RowTemplate.Height = 25;
             this.car_list.Size = new System.Drawing.Size(941, 336);
             this.car_list.TabIndex = 23;
+            this.car_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.car_list_CellClick);
             // 
             // carID
             // 
@@ -904,5 +917,6 @@
         private Button delete_customers_row;
         private Button delete_rented_cars_row;
         private Button delete_rental_info_row;
+        private Button car_list_edit;
     }
 }

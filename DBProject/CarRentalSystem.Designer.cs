@@ -54,6 +54,7 @@
             this.yearField = new System.Windows.Forms.TextBox();
             this.yearLabel = new System.Windows.Forms.Label();
             this.customers = new System.Windows.Forms.TabPage();
+            this.delete_customers_row = new System.Windows.Forms.Button();
             this.insert_cust_list = new System.Windows.Forms.Button();
             this.customersTable = new System.Windows.Forms.DataGridView();
             this.CUST_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +68,7 @@
             this.customerLNField = new System.Windows.Forms.TextBox();
             this.customerLNLabel = new System.Windows.Forms.Label();
             this.rentedCars = new System.Windows.Forms.TabPage();
+            this.delete_rented_cars_row = new System.Windows.Forms.Button();
             this.insert_rented_cars = new System.Windows.Forms.Button();
             this.rentedCarsTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +85,7 @@
             this.rcCUSTIDField = new System.Windows.Forms.TextBox();
             this.rcCUSTIDLabel = new System.Windows.Forms.Label();
             this.rentalInfo = new System.Windows.Forms.TabPage();
+            this.delete_rental_info_row = new System.Windows.Forms.Button();
             this.turnedInField = new System.Windows.Forms.CheckBox();
             this.insert_rental_info = new System.Windows.Forms.Button();
             this.rentalInfoTable = new System.Windows.Forms.DataGridView();
@@ -97,9 +100,6 @@
             this.rentStartField = new System.Windows.Forms.TextBox();
             this.rentEndField = new System.Windows.Forms.TextBox();
             this.rentEndLabel = new System.Windows.Forms.Label();
-            this.delete_customers_row = new System.Windows.Forms.Button();
-            this.delete_rented_cars_row = new System.Windows.Forms.Button();
-            this.delete_rental_info_row = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
@@ -366,6 +366,16 @@
             this.customers.Text = "Customers";
             this.customers.UseVisualStyleBackColor = true;
             // 
+            // delete_customers_row
+            // 
+            this.delete_customers_row.Location = new System.Drawing.Point(6, 481);
+            this.delete_customers_row.Name = "delete_customers_row";
+            this.delete_customers_row.Size = new System.Drawing.Size(75, 23);
+            this.delete_customers_row.TabIndex = 27;
+            this.delete_customers_row.Text = "Delete";
+            this.delete_customers_row.UseVisualStyleBackColor = true;
+            this.delete_customers_row.Click += new System.EventHandler(this.delete_customers_row_Click);
+            // 
             // insert_cust_list
             // 
             this.insert_cust_list.Location = new System.Drawing.Point(850, 95);
@@ -493,6 +503,16 @@
             this.rentedCars.TabIndex = 2;
             this.rentedCars.Text = "Rented Cars";
             this.rentedCars.UseVisualStyleBackColor = true;
+            // 
+            // delete_rented_cars_row
+            // 
+            this.delete_rented_cars_row.Location = new System.Drawing.Point(6, 481);
+            this.delete_rented_cars_row.Name = "delete_rented_cars_row";
+            this.delete_rented_cars_row.Size = new System.Drawing.Size(75, 23);
+            this.delete_rented_cars_row.TabIndex = 28;
+            this.delete_rented_cars_row.Text = "Delete";
+            this.delete_rented_cars_row.UseVisualStyleBackColor = true;
+            this.delete_rented_cars_row.Click += new System.EventHandler(this.delete_rented_cars_row_Click);
             // 
             // insert_rented_cars
             // 
@@ -648,6 +668,16 @@
             this.rentalInfo.Text = "Rental Info";
             this.rentalInfo.UseVisualStyleBackColor = true;
             // 
+            // delete_rental_info_row
+            // 
+            this.delete_rental_info_row.Location = new System.Drawing.Point(6, 481);
+            this.delete_rental_info_row.Name = "delete_rental_info_row";
+            this.delete_rental_info_row.Size = new System.Drawing.Size(75, 23);
+            this.delete_rental_info_row.TabIndex = 29;
+            this.delete_rental_info_row.Text = "Delete";
+            this.delete_rental_info_row.UseVisualStyleBackColor = true;
+            this.delete_rental_info_row.Click += new System.EventHandler(this.delete_rental_info_row_Click);
+            // 
             // turnedInField
             // 
             this.turnedInField.AutoSize = true;
@@ -772,33 +802,6 @@
             this.rentEndLabel.Size = new System.Drawing.Size(109, 20);
             this.rentEndLabel.TabIndex = 17;
             this.rentEndLabel.Text = "Rent End Date";
-            // 
-            // delete_customers_row
-            // 
-            this.delete_customers_row.Location = new System.Drawing.Point(6, 481);
-            this.delete_customers_row.Name = "delete_customers_row";
-            this.delete_customers_row.Size = new System.Drawing.Size(75, 23);
-            this.delete_customers_row.TabIndex = 27;
-            this.delete_customers_row.Text = "Delete";
-            this.delete_customers_row.UseVisualStyleBackColor = true;
-            // 
-            // delete_rented_cars_row
-            // 
-            this.delete_rented_cars_row.Location = new System.Drawing.Point(6, 481);
-            this.delete_rented_cars_row.Name = "delete_rented_cars_row";
-            this.delete_rented_cars_row.Size = new System.Drawing.Size(75, 23);
-            this.delete_rented_cars_row.TabIndex = 28;
-            this.delete_rented_cars_row.Text = "Delete";
-            this.delete_rented_cars_row.UseVisualStyleBackColor = true;
-            // 
-            // delete_rental_info_row
-            // 
-            this.delete_rental_info_row.Location = new System.Drawing.Point(6, 481);
-            this.delete_rental_info_row.Name = "delete_rental_info_row";
-            this.delete_rental_info_row.Size = new System.Drawing.Size(75, 23);
-            this.delete_rental_info_row.TabIndex = 29;
-            this.delete_rental_info_row.Text = "Delete";
-            this.delete_rental_info_row.UseVisualStyleBackColor = true;
             // 
             // CarRentalSystem
             // 

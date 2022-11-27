@@ -281,6 +281,10 @@ namespace DBProject {
             }
         }
 
+        private void delete_customers_row_Click(object sender, EventArgs e) {
+
+        }
+
         //show data in rented_cars table
         private void showRentedCarsData(string table)
         {
@@ -334,6 +338,10 @@ namespace DBProject {
                 Console.WriteLine("Cannot insert data");
                 return;
             }
+        }
+
+        private void delete_rented_cars_row_Click(object sender, EventArgs e) {
+
         }
 
         //show data in rental_info table
@@ -427,5 +435,8 @@ namespace DBProject {
             }
         }
 
+        private void delete_rental_info_row_Click(object sender, EventArgs e) {
+
+        }
     }
 }

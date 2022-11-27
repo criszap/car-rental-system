@@ -35,9 +35,10 @@ namespace DBProject {
 
                 using (var sqlite = new SQLiteConnection(@"Data Source =" + path)) {
                     sqlite.Open();
+                    string sql = "";
 
                     // CAR_LIST table creation
-                    string sql = "CREATE TABLE CAR_LIST(" +
+                    sql = "CREATE TABLE CAR_LIST(" +
                         "CAR_ID INTEGER, " +
                         "MAKE TEXT, " +
                         "MODEL TEXT, " +
@@ -50,6 +51,16 @@ namespace DBProject {
                     SQLiteCommand CARLISTcommand = new SQLiteCommand(sql, sqlite);
                     CARLISTcommand.ExecuteNonQuery();
 
+                    sql = "INSERT INTO CAR_LIST(MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE)" +
+                        "VALUES ('Ford', 'Mustang', 2014, 'Red', 69, 'Y'), " +
+                               "('Nissan', 'R34 Skyline GT-R', 1998, 'Black', 212, 'N'), " +
+                               "('Honda', 'Civic Type-R', 1994, 'White', 80, 'N'), " +
+                               "('Mitsubishi', 'Lancer Evo X', 2008, 'Red', 105, 'N'), " +
+                               "('RL', 'Octane', 2015, 'White', 315, 'N'), " +
+                               "('RL', 'Dominus GT', 2016, 'Purple', 280, 'Y');";
+                    SQLiteCommand CARLISTinsert = new SQLiteCommand(sql, sqlite);
+                    CARLISTinsert.ExecuteNonQuery();
+
                     // CUSTOMERS table creation
                     sql = "CREATE TABLE CUSTOMERS(" +
                             "CUST_ID INTEGER, " +
@@ -60,6 +71,16 @@ namespace DBProject {
                           ");" ;
                     SQLiteCommand CUSTOMERScommand = new SQLiteCommand(sql, sqlite);
                     CUSTOMERScommand.ExecuteNonQuery();
+
+                    sql = "INSERT INTO CUSTOMERS(FIRST_NAME, LAST_NAME, EMAIL)" +
+                        "VALUES ('Cristian', 'Zapata', 'czapata@gmail.com'), " +
+                               "('Alejandro', 'Romero-Lopez', 'aromero@gmail.com'), " +
+                               "('Jesus', 'Jimenez', 'jjimenez@gmail.com'), " +
+                               "('Kwabena','Adjei','kadjei@gmail.com'), " +
+                               "('Nico', 'Zamora', 'nzamora@gmail.com'), " +
+                               "('Martin', 'Castillo', 'mcastillo@gmail.com');";
+                    SQLiteCommand CUSTOMERSinsert = new SQLiteCommand(sql, sqlite);
+                    CUSTOMERSinsert.ExecuteNonQuery();
 
                     // RENTED_CARS table creation
                     sql = "CREATE TABLE RENTED_CARS(" +
@@ -75,17 +96,38 @@ namespace DBProject {
                     SQLiteCommand RENTEDCARScommand = new SQLiteCommand(sql, sqlite);
                     RENTEDCARScommand.ExecuteNonQuery();
 
+                    sql = "INSERT INTO RENTED_CARS(CAR_ID, CUST_ID, CITY, STATE)" +
+                        "VALUES (5, 1, 'Sunnyvale', 'California'), " +
+                               "(2, 2, 'Seattle', 'Washington'), " +
+                               "(6, 3, 'Wichita', 'Kansas'), " +
+                               "(3, 4, 'Richmond', 'Virginia'), " +
+                               "(3, 5, 'New York', 'New York'), " +
+                               "(4, 6, 'Zacatecas', 'Mexico');";
+                    SQLiteCommand RENTEDCARSinsert = new SQLiteCommand(sql, sqlite);
+                    RENTEDCARSinsert.ExecuteNonQuery();
+
                     // RENTAL_INFO table creation
                     sql = "CREATE TABLE RENTAL_INFO(" +
                             "ORDER_ID INTEGER, " +
-                            "RENT_START VARCHAR(10), " +
-                            "RENT_END VARCHAR(10), " +
+                            "RENT_START TEXT, " +
+                            "RENT_END TEXT, " +
                             "TOTAL_PRICE INTEGER, " +
+                            "TURNED_IN TEXT, " +
                             "FOREIGN KEY (ORDER_ID) REFERENCES RENTED_CARS(ORDER_ID), " +
                             "PRIMARY KEY (ORDER_ID)" +
                           ");";
                     SQLiteCommand RENTALINFOcommand = new SQLiteCommand(sql, sqlite);
                     RENTALINFOcommand.ExecuteNonQuery();
+
+                    sql = "INSERT INTO RENTAL_INFO(ORDER_ID, RENT_START, RENT_END, TOTAL_PRICE, TURNED_IN)" +
+                        "VALUES (1, '05/30/2023', '08/15/2023'," + getTotalPrice("1", "05/30/2023", "08/15/2023") + ", 'N'), " +
+                               "(2, '05/30/2023', '08/15/2023'," + getTotalPrice("2", "05/30/2023", "08/15/2023") + ", 'N'), " +
+                               "(3, '12/01/2022', '12/04/2022'," + getTotalPrice("3", "12/01/2022", "12/04/2022") + ", 'N'), " +
+                               "(4, '03/05/2023', '03/11/2023'," + getTotalPrice("4", "03/05/2023", "03/11/2023") + ", 'Y'), " +
+                               "(5, '06/01/2023', '08/05/2023'," + getTotalPrice("5", "06/01/2023", "08/05/2023") + ", 'N'), " +
+                               "(6, '12/01/2022', '01/12/2023'," + getTotalPrice("6", "12/01/2022", "01/12/2023") + ", 'N');";
+                    SQLiteCommand RENTALINFOinsert = new SQLiteCommand(sql, sqlite);
+                    RENTALINFOinsert.ExecuteNonQuery();
                 }
             }
             else {
@@ -284,7 +326,7 @@ namespace DBProject {
 
                 while (dr.Read())
                 {
-                    rentalInfoTable.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3));
+                    rentalInfoTable.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), dr.GetString(4));
                 }
             }
         }
@@ -326,8 +368,8 @@ namespace DBProject {
 
             try
             {
-                cmd.CommandText = "INSERT INTO RENTAL_INFO(ORDER_ID, RENT_START, RENT_END, TOTAL_PRICE) " +
-                   "VALUES(@ORDER_ID, @RENT_START, @RENT_END, @TOTAL_PRICE)";
+                cmd.CommandText = "INSERT INTO RENTAL_INFO(ORDER_ID, RENT_START, RENT_END, TOTAL_PRICE, TURNED_IN) " +
+                   "VALUES(@ORDER_ID, @RENT_START, @RENT_END, @TOTAL_PRICE, @TURNED_IN)";
 
                 //var max_id_cmd = new SQLiteCommand(con);
                 //max_id_cmd.CommandText = "SELECT MAX(ORDER_ID) FROM RENTED_CARS";
@@ -336,11 +378,20 @@ namespace DBProject {
                 string RENT_START = rentStartField.Text;
                 string RENT_END = rentEndField.Text;
                 string TOTAL_PRICE = getTotalPrice(ORDER_ID, RENT_START, RENT_END);
+                string TURNED_IN = "";
+
+                if (turnedInField.Checked) {
+                    TURNED_IN = "Y";
+                } 
+                else {
+                    TURNED_IN = "N";
+                }
 
                 cmd.Parameters.AddWithValue("@ORDER_ID", ORDER_ID);
                 cmd.Parameters.AddWithValue("@RENT_START", RENT_START);
                 cmd.Parameters.AddWithValue("@RENT_END", RENT_END);
                 cmd.Parameters.AddWithValue("@TOTAL_PRICE", TOTAL_PRICE);
+                cmd.Parameters.AddWithValue("@TURNED_IN", TURNED_IN);
 
 
                 cmd.ExecuteNonQuery();

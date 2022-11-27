@@ -84,16 +84,18 @@
             this.rentalInfo = new System.Windows.Forms.TabPage();
             this.insert_rental_info = new System.Windows.Forms.Button();
             this.rentalInfoTable = new System.Windows.Forms.DataGridView();
-            this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rent_start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rent_end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentalOrderIdLabel = new System.Windows.Forms.Label();
             this.rentalOrderIdField = new System.Windows.Forms.TextBox();
             this.rentStartLabel = new System.Windows.Forms.Label();
             this.rentStartField = new System.Windows.Forms.TextBox();
             this.rentEndField = new System.Windows.Forms.TextBox();
             this.rentEndLabel = new System.Windows.Forms.Label();
+            this.turnedInField = new System.Windows.Forms.CheckBox();
+            this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rent_start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rent_end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turned_in = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
@@ -612,6 +614,7 @@
             // 
             // rentalInfo
             // 
+            this.rentalInfo.Controls.Add(this.turnedInField);
             this.rentalInfo.Controls.Add(this.insert_rental_info);
             this.rentalInfo.Controls.Add(this.rentalInfoTable);
             this.rentalInfo.Controls.Add(this.rentalOrderIdLabel);
@@ -644,36 +647,13 @@
             this.order_id,
             this.rent_start_date,
             this.rent_end_date,
-            this.total_price});
+            this.total_price,
+            this.turned_in});
             this.rentalInfoTable.Location = new System.Drawing.Point(6, 124);
             this.rentalInfoTable.Name = "rentalInfoTable";
             this.rentalInfoTable.RowTemplate.Height = 25;
             this.rentalInfoTable.Size = new System.Drawing.Size(941, 336);
             this.rentalInfoTable.TabIndex = 23;
-            // 
-            // order_id
-            // 
-            this.order_id.HeaderText = "Order ID";
-            this.order_id.Name = "order_id";
-            this.order_id.Width = 225;
-            // 
-            // rent_start_date
-            // 
-            this.rent_start_date.HeaderText = "Rent Start Date";
-            this.rent_start_date.Name = "rent_start_date";
-            this.rent_start_date.Width = 225;
-            // 
-            // rent_end_date
-            // 
-            this.rent_end_date.HeaderText = "Rent End Date";
-            this.rent_end_date.Name = "rent_end_date";
-            this.rent_end_date.Width = 225;
-            // 
-            // total_price
-            // 
-            this.total_price.HeaderText = "Total Price";
-            this.total_price.Name = "total_price";
-            this.total_price.Width = 225;
             // 
             // rentalOrderIdLabel
             // 
@@ -734,6 +714,46 @@
             this.rentEndLabel.Size = new System.Drawing.Size(109, 20);
             this.rentEndLabel.TabIndex = 17;
             this.rentEndLabel.Text = "Rent End Date";
+            // 
+            // turnedInField
+            // 
+            this.turnedInField.AutoSize = true;
+            this.turnedInField.Location = new System.Drawing.Point(566, 74);
+            this.turnedInField.Name = "turnedInField";
+            this.turnedInField.Size = new System.Drawing.Size(76, 19);
+            this.turnedInField.TabIndex = 26;
+            this.turnedInField.Text = "Turned In";
+            this.turnedInField.UseVisualStyleBackColor = true;
+            // 
+            // order_id
+            // 
+            this.order_id.HeaderText = "Order ID";
+            this.order_id.Name = "order_id";
+            this.order_id.Width = 180;
+            // 
+            // rent_start_date
+            // 
+            this.rent_start_date.HeaderText = "Rent Start Date";
+            this.rent_start_date.Name = "rent_start_date";
+            this.rent_start_date.Width = 180;
+            // 
+            // rent_end_date
+            // 
+            this.rent_end_date.HeaderText = "Rent End Date";
+            this.rent_end_date.Name = "rent_end_date";
+            this.rent_end_date.Width = 180;
+            // 
+            // total_price
+            // 
+            this.total_price.HeaderText = "Total Price";
+            this.total_price.Name = "total_price";
+            this.total_price.Width = 180;
+            // 
+            // turned_in
+            // 
+            this.turned_in.HeaderText = "Turned In";
+            this.turned_in.Name = "turned_in";
+            this.turned_in.Width = 180;
             // 
             // CarRentalSystem
             // 
@@ -805,10 +825,6 @@
         private TextBox rcCARIDField;
         private TextBox rcCUSTIDField;
         private Label rcCUSTIDLabel;
-        private DataGridViewTextBoxColumn order_id;
-        private DataGridViewTextBoxColumn rent_start_date;
-        private DataGridViewTextBoxColumn rent_end_date;
-        private DataGridViewTextBoxColumn total_price;
         private DataGridViewTextBoxColumn CUST_ID;
         private DataGridViewTextBoxColumn FIRST_NAME;
         private DataGridViewTextBoxColumn LAST_NAME;
@@ -830,5 +846,11 @@
         private Button insert_cust_list;
         private Button insert_rented_cars;
         private Button insert_rental_info;
+        private CheckBox turnedInField;
+        private DataGridViewTextBoxColumn order_id;
+        private DataGridViewTextBoxColumn rent_start_date;
+        private DataGridViewTextBoxColumn rent_end_date;
+        private DataGridViewTextBoxColumn total_price;
+        private DataGridViewTextBoxColumn turned_in;
     }
 }

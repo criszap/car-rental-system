@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Web;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace DBProject {
     public partial class CarRentalSystem : Form {
@@ -216,6 +217,7 @@ namespace DBProject {
             }
         }
 
+        //show data in rented_cars table
         private void showRentedCarsData(string table)
         {
             using (var con = new SQLiteConnection(cs))
@@ -232,6 +234,7 @@ namespace DBProject {
             }
         }
 
+        // handler for rented_cars insert button
         private void insert_rented_cars_Click(object sender, EventArgs e)
         {
             var con = new SQLiteConnection(cs);
@@ -269,6 +272,7 @@ namespace DBProject {
             }
         }
 
+        //show data in rental_info table
         private void showRentalInfoData(string table)
         {
             using (var con = new SQLiteConnection(cs))
@@ -285,6 +289,7 @@ namespace DBProject {
             }
         }
 
+        // handler for getting the total price of a rented car
         private string getTotalPrice(string orderID, string RENT_START, string RENT_END) {
             using (var con = new SQLiteConnection(cs))
             {
@@ -305,10 +310,13 @@ namespace DBProject {
 
                 var day_diff = end_date.Subtract(start_date).Days;
 
-                return "";
+                int totalPrice = ((int)day_diff + 1) * Int32.Parse(daily_price);
+
+                return totalPrice.ToString();
             }
         }
 
+        // handler for rental_info insert button
         private void insert_rental_info_Click(object sender, EventArgs e)
         {
             var con = new SQLiteConnection(cs);

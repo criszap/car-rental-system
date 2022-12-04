@@ -941,9 +941,14 @@
             // 
             // predefSQL_Table
             // 
+            this.predefSQL_Table.AllowUserToAddRows = false;
+            this.predefSQL_Table.AllowUserToDeleteRows = false;
+            this.predefSQL_Table.AllowUserToResizeColumns = false;
+            this.predefSQL_Table.AllowUserToResizeRows = false;
             this.predefSQL_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.predefSQL_Table.Location = new System.Drawing.Point(6, 124);
             this.predefSQL_Table.Name = "predefSQL_Table";
+            this.predefSQL_Table.ReadOnly = true;
             this.predefSQL_Table.RowTemplate.Height = 25;
             this.predefSQL_Table.Size = new System.Drawing.Size(941, 336);
             this.predefSQL_Table.TabIndex = 30;
@@ -955,6 +960,7 @@
             this.ClientSize = new System.Drawing.Size(985, 575);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CarRentalSystem";
             this.Text = "Car Rental System";

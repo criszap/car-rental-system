@@ -743,7 +743,7 @@ namespace DBProject {
             using (var con = new SQLiteConnection(cs)) {
                 con.Open();
                 string stm =
-                        "SELECT * FROM CAR_LIST";
+                        "SELECT RENTED_CARS.CITY, RENTED_CARS.STATE, AVG(RENTAL_INFO.TOTAL_PRICE) AS AVERAGE_PRICE FROM RENTED_CARS JOIN RENTAL_INFO ON RENTED_CARS.ORDER_ID = RENTAL_INFO.ORDER_ID GROUP BY RENTED_CARS.CITY, RENTED_CARS.STATE;";
 
                 var cmd = new SQLiteCommand(stm, con);
                 dr = cmd.ExecuteReader();
@@ -761,8 +761,7 @@ namespace DBProject {
                 }
 
                 while (dr.Read()) {
-                    predefSQL_Table.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), 
-                        dr.GetString(4), dr.GetInt32(5), dr.GetString(6));
+                    predefSQL_Table.Rows.Insert(0, dr.GetString(0), dr.GetString(1), dr.GetFloat(2));
                 }
             }
         }
@@ -771,7 +770,7 @@ namespace DBProject {
             using (var con = new SQLiteConnection(cs)) {
                 con.Open();
                 string stm =
-                        "SELECT * FROM CAR_LIST";
+                        "SELECT RENTED_CARS.CUST_ID, RENTED_CARS.CAR_ID, COUNT(RENTED_CARS.CAR_ID) TOTAL_RENTED_AMOUNT FROM RENTED_CARS GROUP BY RENTED_CARS.CUST_ID, RENTED_CARS.CAR_ID";
 
                 var cmd = new SQLiteCommand(stm, con);
                 dr = cmd.ExecuteReader();
@@ -789,8 +788,7 @@ namespace DBProject {
                 }
 
                 while (dr.Read()) {
-                    predefSQL_Table.Rows.Insert(0, dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), 
-                        dr.GetString(4), dr.GetInt32(5), dr.GetString(6));
+                    predefSQL_Table.Rows.Insert(0, dr.GetInt32(0), dr.GetInt32(1), dr.GetInt32(2));
                 }
             }
         }

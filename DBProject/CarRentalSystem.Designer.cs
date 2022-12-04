@@ -105,13 +105,13 @@
             this.rentEndField = new System.Windows.Forms.TextBox();
             this.rentEndLabel = new System.Windows.Forms.Label();
             this.predefSQL = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.predefSQL_1_Label = new System.Windows.Forms.Label();
             this.predefSQL_3 = new System.Windows.Forms.Button();
             this.predefSQL_2 = new System.Windows.Forms.Button();
             this.predefSQL_1 = new System.Windows.Forms.Button();
             this.predefSQL_Table = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.carList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car_list)).BeginInit();
@@ -882,14 +882,23 @@
             this.predefSQL.Text = "Predef\'s";
             this.predefSQL.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(671, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 15);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Total Rents Per Customer";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(387, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 15);
+            this.label1.Size = new System.Drawing.Size(157, 15);
             this.label1.TabIndex = 32;
-            this.label1.Text = "PREDEF_2";
+            this.label1.Text = "Average Rental Cost per City";
             // 
             // predefSQL_1_Label
             // 
@@ -938,15 +947,6 @@
             this.predefSQL_Table.RowTemplate.Height = 25;
             this.predefSQL_Table.Size = new System.Drawing.Size(941, 336);
             this.predefSQL_Table.TabIndex = 30;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(671, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 15);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "PREDEF_3";
             // 
             // CarRentalSystem
             // 

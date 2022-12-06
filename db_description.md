@@ -1,7 +1,7 @@
 ### Description
-###### This database is a system created for a rental car service business. Using this system, an employee can contain a list of 
-###### cars that the rental business owns, keep a list of customers that they have rented cars out to, determine where a car is currently 
-###### located, and rental information containing reciepts of each order as well as the total cost of each rental.
+###### This database is a system created for a rental car service business. Using this system, an employee can contain a list of cars that the rental business owns, ###### keep a list of customers that they have rented cars out to, determine where a car is currently located, and rental information containing reciepts of each order ###### as well as the total cost of each rental.
+ 
+ 
 
 ### Table 1
     Table1 (car list):

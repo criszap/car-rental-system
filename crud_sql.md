@@ -26,18 +26,18 @@
 
 
 
-## CREATE (insert based on user-entered fields)
+### CREATE (insert based on user-entered fields)
     INSERT INTO CUSTOMERS(FIRST_NAME, LAST_NAME, EMAIL) 
     VALUES(@FIRST_NAME, @LAST_NAME, @EMAIL);
-## READ
+### READ
     SELECT * FROM CUSTOMERS
-## UPDATE (based on selected row fields)
+### UPDATE (based on selected row fields)
     UPDATE CUSTOMERS SET
         FIRST_NAME = customerFNField.Text,
         LAST_NAME = customerLNField.Text,
         EMAIL = customerEmailField.Text
     WHERE CUST_ID = customersTable.CurrentRow.Cells[0].FormattedValue.ToString();
-## DELETE (based on ID of selected row)
+### DELETE (based on ID of selected row)
     DELETE FROM CUSTOMERS
     WHERE CUST_ID = customersTable.CurrentRow.Cells[0].FormattedValue.ToString();
     
@@ -47,19 +47,19 @@
 
 
 
-## CREATE (insert based on user-entered fields)
+### CREATE (insert based on user-entered fields)
     INSERT INTO RENTED_CARS(CAR_ID, CUST_ID, CITY, STATE)
     VALUES(@CAR_ID, @CUST_ID, @CITY, @STATE);
-## READ
+### READ
     SELECT * RENTED_CARS
-## UPDATE (based on selected row fields)
+### UPDATE (based on selected row fields)
     UPDATE RENTED_CARS SET
         CAR_ID = rcCARIDField.Text,
         CUST_ID = rcCUSTIDField.Text,
         CITY = rcCITYField.Text,
         STATE = rcSTATEField.Text
     WHERE ORDER_ID = rentedCarsTable.CurrentRow.Cells[0].FormattedValue.ToString();
-## DELETE (based on ID of selected row)
+### DELETE (based on ID of selected row)
     DELETE FROM RENTED_CARS
     WHERE ORDER_ID = rentedCarsTable.CurrentRow.Cells[0].FormattedValue.ToString(); 
     
@@ -69,12 +69,12 @@
 
 
 
-## CREATE (insert based on user-entered fields)
+### CREATE (insert based on user-entered fields)
     INSERT INTO RENTAL_INFO(ORDER_ID, RENT_START, RENT_END, TOTAL_PRICE, TURNED_IN)
     VALUES(@ORDER_ID, @RENT_START, @RENT_END, @TOTAL_PRICE, @TURNED_IN);
-## READ
+### READ
     SELECT * RENTAL_INFO
-## UPDATE (based on selected row fields & total price calc'd)
+### UPDATE (based on selected row fields & total price calc'd)
     UPDATE RENTAL_INFO SET
         ORDER_ID = rentalOrderIdField.Text,
         RENT_START = rentStartField.Text,
@@ -82,6 +82,6 @@
         TOTAL_PRICE = getTotalPrice(rentalOrderIdField.Text, rentStartField.Text, rentEndField.Text),
         TURNED_IN = avail_field
     WHERE ORDER_ID = rentalInfoTable.CurrentRow.Cells[0].FormattedValue.ToString();
-## DELETE (based on ID of selected row)
+### DELETE (based on ID of selected row)
     DELETE FROM RENTAL_INFO 
         WHERE ORDER_ID = rentalInfoTable.CurrentRow.Cells[0].FormattedValue.ToString();

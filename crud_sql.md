@@ -2,12 +2,12 @@
 
 
 
-## CREATE (insert based on user-entered fields)
+### CREATE (insert based on user-entered fields)
     INSERT INTO CAR_LIST(MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE) 
     VALUES(@MAKE, @MODEL, @YEAR, @COLOR, @DAILY_PRICE, @AVAILABLE);
-## READ
+### READ
     SELECT * FROM CAR_LIST
-## UPDATE (based on selected row fields)
+### UPDATE (based on selected row fields)
     UPDATE CAR_LIST SET
         MAKE = makeField.Text,
         MODEL = modelField.Text,
@@ -16,7 +16,7 @@
         DAILY_PRICE = dailyPriceField.Text,
         AVAILABLE = avail_field
     WHERE CAR_ID = car_list.CurrentRow.Cells[0].FormattedValue.ToString();  
-## DELETE (based on ID of selected row)
+### DELETE (based on ID of selected row)
     DELETE FROM CAR_LIST 
     WHERE CAR_ID = car_list.CurrentRow.Cells[0].FormattedValue.ToString();
   

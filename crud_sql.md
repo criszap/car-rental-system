@@ -1,4 +1,6 @@
+# 
 # CRUD on CAR_LIST
+#
 
 ## CREATE (insert based on user-entered fields)
     INSERT INTO CAR_LIST(MAKE, MODEL, YEAR, COLOR, DAILY_PRICE, AVAILABLE) 
@@ -18,8 +20,9 @@
     DELETE FROM CAR_LIST 
     WHERE CAR_ID = car_list.CurrentRow.Cells[0].FormattedValue.ToString();
    
-   
+#   
 # CRUD on CUSTOMERS
+#
 
 ## CREATE (insert based on user-entered fields)
     INSERT INTO CUSTOMERS(FIRST_NAME, LAST_NAME, EMAIL) 
@@ -36,8 +39,9 @@
     DELETE FROM CUSTOMERS
     WHERE CUST_ID = customersTable.CurrentRow.Cells[0].FormattedValue.ToString();
     
-    
+#    
 # CRUD on RENTED_CARS
+#
 
 ## CREATE (insert based on user-entered fields)
     INSERT INTO RENTED_CARS(CAR_ID, CUST_ID, CITY, STATE)
@@ -55,8 +59,9 @@
     DELETE FROM RENTED_CARS
     WHERE ORDER_ID = rentedCarsTable.CurrentRow.Cells[0].FormattedValue.ToString(); 
     
-    
+#    
 # CRUD on RENTAL_INFO
+#
 
 ## CREATE (insert based on user-entered fields)
     INSERT INTO RENTAL_INFO(ORDER_ID, RENT_START, RENT_END, TOTAL_PRICE, TURNED_IN)

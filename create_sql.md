@@ -1,4 +1,4 @@
-###Create car list table
+### Create car list table
 CREATE TABLE CAR_LIST(
   CAR_ID INTEGER,
   MAKE TEXT,
@@ -10,7 +10,7 @@ CREATE TABLE CAR_LIST(
   PRIMARY KEY (CAR_ID)
 );
 
-###Create customers table
+### Create customers table
 CREATE TABLE CUSTOMERS(
   CUST_ID INTEGER,
   FIRST_NAME TEXT,
@@ -19,7 +19,7 @@ CREATE TABLE CUSTOMERS(
   PRIMARY KEY (CUST_ID)
 );
 
-###Create rented cars table
+### Create rented cars table
 CREATE TABLE RENTED_CARS(
   ORDER_ID INTEGER,
   CAR_ID INTEGER,
@@ -31,7 +31,7 @@ CREATE TABLE RENTED_CARS(
   PRIMARY KEY (ORDER_ID)
 );
 
-###Create rental info table
+### Create rental info table
 CREATE TABLE RENTAL_INFO(
   ORDER_ID INTEGER,
   RENT_START TEXT, 

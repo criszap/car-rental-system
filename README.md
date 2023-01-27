@@ -9,7 +9,7 @@
   <br>
 </h1>
 
-<h4 align="center"> Application made for our CS665 (Fall 2022) course which allows the user to perform CRUD operations on a database. </h4>
+<h4 align="center"> Application allowing the user to perform CRUD operations on a car rental companys database. </h4>
 <h5 align="center">Made with WinForms (C#) and SQLite.</h5>
 
 ## Links:

@@ -14,7 +14,7 @@
 
 ## Links:
 - [Repo](https://github.com/criszap/DBProject)
-- [Video](https://youtu.be/7W-3_yNQ4_8)
+- [Video]()
   
 ## Made By
 - [Cristian Zapata](https://github.com/criszap)
